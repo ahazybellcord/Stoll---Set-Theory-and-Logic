@@ -1,0 +1,250 @@
+\documentclass[12pt]{book}
+\parindent=0px
+\usepackage{amssymb, amsmath, fullpage, graphicx}
+\usepackage{enumitem, siunitx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\input{./macros}
+
+\begin{document}
+\chapter{Sets and Relations}
+
+\renewcommand{\labelenumi}{2.\arabic{enumi}}
+\begin{enumerate}
+\solution{Explain why $2 \in \set{1,2,3}$.}{$2 \in \set{1,2,3}$ by definition: 2 is an element of $\set{1,2,3}$.}
+\solution{Is $\set{1,2} \in \set{\set{1,2,3}, \set{1,3},1,2}$? Justify your answer.}{$\set{1,2} \notin \set{\set{1,2,3},\set{1,3},1,2}$ since it does not appear as a member of the given set.}
+\solution{Try to devise a set which is a member of itself.}{The set of all sets.}
+\solution{Give an example of sets $A, B,$ and $C$ such that $A \in B$, $B \in C$, and $A \notin C$.}{$\Set{A} = \set{1}$. $\Set{B} = \set{1, \set{1}}$. $\Set{C} = \set{1, \set{1, \set{1}}}$. Then $\Set{A} \in \Set{B}$, $\Set{B} \in \Set{C}$, but $\Set{A} \notin \Set{C}$.}
+\solution{Describe in prose each of the following sets.} 
+	{\begin{enumerate}
+	\solution{$\set{x \in \mathbb{Z} \mid x \text{ is divisible by } 2 \text{ and } x \text{ is divisible by } 3}$}{All integer multiples of 6.}
+	\solution{$\set{x \mid x \in A \text{ and } x \in B}$}{All elements common to sets A and B.}
+	\solution{$\set{x \mid x \in A \text{ or } x \in B}$}{All elements from set A and from set B.}
+	\solution{$\set{x \in \mathbb{Z}^+ \mid x \in \set{x \in \mathbb{Z} \mid \text{for some integer } y,\, x = 2y} \text{ and } x \in \set{x \in \mathbb{Z} \mid \text{for some integer } y,\, x = 3y}}$}{All positive integer multiples of 6.}
+	\solution{$\set{x^2 \mid x \text{ is a prime}}$}{The squares of all prime numbers.}
+	\solution{$\set{a/b \in \mathbb{Q} \mid a + b = 1 \text{ and } a, b \in \mathbb{Q}}$}{All ratios of rational numbers whose numerator and denominator sum to 1; i.e. all rational numbers.}
+	\solution{$\set{(x,y) \in \mathbb{R}^2 \mid x^2 + y^2 = 1}$}{All points on the unit circle.}
+	\solution{$\set{(x,y) \in \mathbb{R}^2 \mid y = 2x \text{ and } y = 3x}$}{The single point (0,0).}
+	\end{enumerate}}
+\solution{Prove that if $a,b,c$, and $d$ are any objects, not necessarily distinct from one another, then $\set{\set{a},\set{a,b}} = \set{\set{c},\set{c,d}}$ iff both $a = c$ and $b = d$.}
+{($\Rightarrow$) Let $\set{\set{a},\set{a,b}} = \set{\set{c},\set{c,d}}$. Then $\set{\set{a},\set{a,b}} \subseteq \set{\set{c},\set{c,d}}$ and so in particular $\set{a} \in \set{\set{c},\set{c,d}}$. Suppose $c = d$. Then $\set{\set{c},\set{c,d}} = \set{\set{c},\set{c,c}} = \set{\set{c},\set{c}} = \set{\set{c}}$ and therefore $\set{a} \in \set{\set{c}} \Rightarrow \set{a} = \set{c} \Rightarrow \set{a} \subseteq \set{c} \Rightarrow a \in \set{c} \Rightarrow a = c$. Then since $\set{\set{a},\set{a,b}} \subseteq \set{\set{c},\set{c,d}} = \set{\set{c}} = \set{\set{a}}$ we also have that $\set{a,b} \in \set{\set{a}} \Rightarrow \set{a,b} = \set{a} \Rightarrow \set{a,b} \subseteq \set{a} \Rightarrow b \in \set{a} \Rightarrow a = b$. Now suppose $c \neq d$. Since $\set{a} \in \set{\set{c},\set{c,d}} \Rightarrow \set{a} = \set{c} \Rightarrow a = c$. By $\set{\set{a},\set{a,b}} \subseteq \set{\set{c},\set{c,d}}$ we also have that $\set{a,b} = \set{c,b} \in \set{\set{c},\set{c,d}}$ and so $\set{c,b} = \set{c,d} \Rightarrow b = d$.\\ ($\Leftarrow$) Let $a = c$ and $b = d$. Then $\set{\set{a},\set{a,b}} = \set{\set{c},\set{c,d}}$. $\qed$}
+\end{enumerate}
+
+\hrulefill
+
+\renewcommand{\labelenumi}{3.\arabic{enumi}}
+\begin{enumerate}
+\item Prove each of the following, using any properties of numbers that may be needed.
+	\begin{enumerate}
+	\solution{$\set{x \in \mathbb{Z} \mid \text{for an integer } y,\, x = 6y} = \set{x \in \mathbb{Z} \mid \text{for integers } u \text{ and } v,\, x = 2u \text{ and } x = 3v}$.}
+	{Let $a \in \set{x \in \mathbb{Z} \mid \text{for an integer } y,\, x = 6y}$. Then $a = 6b$ for an integer $b$. Then $a = 2\cdot 3b$ and $a = 3 \cdot 2b$. Since $b$ is an integer, $3b$ and $2b$ are also integers. Therefore $a \in \set{x \in \mathbb{Z} \mid \text{for integers } u \text{ and } v,\, x = 2u \text{ and } x = 3v}$ and so $\set{x \in \mathbb{Z} \mid \text{for an integer } y,\, x = 6y} \subseteq \set{x \in \mathbb{Z} \mid \text{for integers } u \text{ and } v,\, x = 2u \text{ and } x = 3v}$.\\ Now let $a \in \set{x \in \mathbb{Z} \mid \text{for integers } u \text{ and } v,\, x = 2u \text{ and } x = 3v}$. Then there is an $m$ and $n$ such that $a = 2m$ and $a = 3n$. Then $m - n = \frac{a}{6}$ and so $a = 6(m - n)$. Since $m$ and $n$ are integers, $m - n$ is also an integer and so $a \in \set{x \in \mathbb{Z} \mid \text{for an integer } y,\, x = 6y}$. Therefore $\set{x \in \mathbb{Z} \mid \text{for integers } u \text{ and } v,\, x = 2u \text{ and } x = 3v} \subseteq \set{x \in \mathbb{Z} \mid \text{for an integer } y,\, x = 6y}$.\\ Thus $\set{x \in \mathbb{Z} \mid \text{for an integer } y,\, x = 6y} = \set{x \in \mathbb{Z} \mid \text{for integers } u \text{ and } v,\, x = 2u \text{ and } x = 3v}$. $\qed$}
+	\solution{$\set{x \in \mathbb{R} \mid \text{for a real number } y,\, x = y^2} = \set{x \in \mathbb{R} \mid x \geq 0}$}
+	{Let $a \in \set{x \in \mathbb{R} \mid \text{for a real number } y,\, x = y^2}$. Then $a = b^2$ for some $b \in \mathbb{R}$. If $b = 0$ then $a = 0$. Otherwise, $a > 0$ since the square of a nonzero real number is positive. Thus $a \in \set{x \in \mathbb{R} \mid x \geq 0}$ and therefore $\set{x \in \mathbb{R} \mid \text{for a real number } y,\, x = y^2} \subseteq \set{x \in \mathbb{R} \mid x \geq 0}$.\\ Now let $a \in \set{x \in \mathbb{R} \mid x \geq 0}$. Then $a \geq 0$. Then we may find a $b \in \mathbb{R}$ such that $a = b^2$: simply pick $b = \sqrt{a} \in \mathbb{R}$. (The square root of any nonnegative real number is again a real number.) Then $a \in \set{x \in \mathbb{R} \mid \text{for a real number } y,\, x = y^2}$ and therefore $\set{x \in \mathbb{R} \mid x \geq 0} \subseteq \set{x \in \mathbb{R} \mid \text{for a real number } y,\, x = y^2}$.\\ Thus $\set{x \in \mathbb{R} \mid \text{for a real number } y,\, x = y^2} = \set{x \in \mathbb{R} \mid x \geq 0}$. $\qed$}
+	\solution{$\set{x \in \mathbb{Z} \mid \text{for an integer }y,\, x = 6y} \subseteq \set{x \in \mathbb{Z} \mid \text{for an integer }y,\, x = 2y}$.}
+	{Let $a \in \set{x \in \mathbb{Z} \mid \text{for an integer }y,\, x = 6y}$. Then $a = 6b$ for some integer $b$. Then $a = 2 \cdot 3b$. Since $b$ is an integer, $3b$ is also an integer. Therefore $a \in \set{x \in \mathbb{Z} \mid \text{for an integer }y,\, x = 2y}$. Thus $\set{x \in \mathbb{Z} \mid \text{for an integer }y,\, x = 6y} \subseteq \set{x \in \mathbb{Z} \mid \text{for an integer }y,\, x = 2y}$. $\qed$}
+	\end{enumerate}
+\item Prove each of the following for sets $A, B$, and $C$.
+	\begin{enumerate}
+	\solution{If $A \subseteq B$ and $B \subseteq C$, then $A \subseteq C$.}
+	{Suppose $A \subseteq B$ and $B \subseteq C$. Then for any $a \in A$ we have that $a \in B$ and since $a \in B$ we have that $a \in C$. Thus $a \in C$ whenever $a \in A$ and therefore $A \subseteq C$.}
+	\solution{If $A \subseteq B$ and $B \subset C$, then $A \subset C$.}
+	{Suppose $A \subseteq B$ and $B \subset C$. Take the case when $A = B$. Since $B \subset C$ we have that $A \subset C$. Now take the case when $A \subset B$. For any $a \in A$ we have that $a \in B$. Since $B \subset C$ we have that $a \in C$. Then $A \subseteq C$. Since $B \subset C$, we know that there is some element $c \in C$ such that $c \notin B$ and since $A \subset B$ we know that $c \notin A$ and so $A \neq C$. Therefore $A \subset C$.}
+	\solution{If $A \subset B$ and $B \subseteq C$, then $A \subset C$.}
+	{Suppose $A \subset B$ and $B \subseteq C$. Take the case when $B = C$. Since $A \subset B$ we have that $A \subset C$. Now take the case when $B \subset C$. For any $a \in A$ we have that $a \in B$. Since $B \subset C$ we have that $a \in C$. Then $A \subseteq C$. Since $B \subset C$, we also know that there is some element $c \in C$ such that $c \notin B$ and since $A \subset B$ we know that $c \notin A$ and so $A \neq C$. Therefore $A \subset C$.}
+	\solution{If $A \subset B$ and $B \subset C$, then $A \subset C$.}
+	{Suppose $A \subset B$ and $B \subset C$. For any $a \in A$ we have that $a \in B$. Since $B \subset C$ we have that $a \in C$. Then $A \subset C$. Since $B \subset C$, we know that there is some element $c \in C$ such that $c \notin B$ and since $A \subset B$ we know that $c \notin A$ and so $A \neq C$. Therefore $A \subset C$.}
+	\end{enumerate}
+\solution{Give an example of sets $A,B,C,D$, and $E$ which satisfy the following conditions simultaneously: $A \subset B$, $B \in C$, $C \subset D$, and $D \subset E$.}
+{Let $A = \emptyset$, $B = \set{\emptyset}$, $C = \set{\set{\emptyset}}$, $D = \set{\emptyset, \set{\emptyset}}$, and $E = \set{\emptyset, \set{\emptyset}, \set{\set{\emptyset}}}$.}
+\item Which of the following are true for all sets $A, B$, and $C$?
+	\begin{enumerate}
+	\solution{If $A \notin B$ and $B \notin C$, then $A \notin C$.}
+	{False: Let $A = \emptyset$, $B = \set{0}$ and $C = \set{\emptyset}$.}
+	\solution{If $A \neq B$ and $B \neq C$, then $A \neq C$.}
+	{False: Let $A = \mathbb{R}$, $B = \mathbb{Z}$ and $C = \mathbb{R}$.}
+	\solution{If $A \in B$ and $B \not\subseteq C$, then $A \notin C$.}
+	{False: Let $A = \emptyset$, $B = \set{\emptyset, 0}$ and $C = \set{\emptyset, 1}$.}
+	\solution{If $A \subset B$ and $B \subseteq C$, then $C \not\subseteq A$.}
+	{True: Suppose $A \subset B$ and $B \subseteq C$. Since $A \subset B$, there is some $b \in B$ such that $b \notin A$. Since $B \subseteq C$ we have that this $b \in C$ and thus there is a $c \in C$ such that $c \notin A$. Therefore $C \not\subseteq A$.}
+	\solution{If $A \subset B$ and $B \subset C$, then $A \subset C$.}
+	{True: Suppose $A \subset B$ and $B \subset C$. Then for any $a \in A$ we have that $a \in B$. Since $a \in B$ we have that $a \in C$. Therefore $A \subseteq C$. Since $B \subset C$ we have that there is some $c \in C$ such that $c \notin B$. Since $A \subset B$ we have that $c \notin A$. Therefore $A \neq C$ and so $A \subset C$.}
+	\end{enumerate}
+\solution{Show that for every set $A$, $A \subseteq \emptyset$ iff $A = \emptyset$.}
+{($\Rightarrow$) Suppose $A \subseteq \emptyset$. Then for any $a \in A$ we have that $a \in \emptyset$. But since the empty set has no members, no such $a$ can exist. Therefore $A$ has no members and so $A = \emptyset$. ($\Leftarrow$) Suppose $A = \emptyset$. Then $A$ has no members and so, certainly, for all $a \in A$ we have that $a \in B$, for any set $B$. Therefore $A \subseteq B$. Letting $B = \emptyset$, we conclude that $A \subseteq \emptyset$. $\qed$}
+\solution{Let $A_1,A_2,\dots,A_n$ be $n$ sets. Show that $$A_1 \subseteq A_2 \subseteq \dots \subseteq A_n \subseteq A_1 \text{ iff } A_1 = A_2 = \dots = A_n.$$}
+{($\Leftarrow$) Suppose sets $A_1 = A_2 = \dots = A_n$. Then clearly $A_i \subseteq A_{i+1}$ for all $1 \leq i \leq n - 1$ and $A_n \subseteq A_1$. Therefore $A_1 \subseteq A_2 \subseteq \dots \subseteq A_n \subseteq A_1$.\\ ($\Rightarrow$) Suppose $A_1 \subseteq A_2 \subseteq \dots \subseteq A_n \subseteq A_1$. Then for any $a \in A_1$ we have that $a \in A_2$, $a \in A_3$, $\dots$, $a \in A_n$ and so $A_1 \subseteq A_n$. But since $A_n \subseteq A_1$ we must have that $A_1 = A_n$. Therefore $A_1 \subseteq A_2 \subseteq \dots \subseteq A_{n-1} \subseteq A_1$. Repeating this argument $n - 2$ times for $j = n - 1, n - 2, \dots, 2$ we find that for any $a \in A_1$ we have that $a \in A_j$ and therefore $A_1 \subseteq A_j$. But we also have that $A_j \subseteq A_1$ and so $A_1 = A_j$. Finally, we conclude that $A_1 = A_2 = \dots = A_n$. $\qed$}
+\solution{Give several examples of a set $X$ such that each element of $X$ is a subset of $X$.}
+{$X_1 = \emptyset$. $X_2 = \set{\emptyset}$. $X_3 = ?$}
+\solution{List the members of $\mathcal{P}(A)$ if $A = \set{\set{1,2}, \set{3}, 1}$.}
+{$\mathcal{P}(A) = \set{A, \set{\set{1,2}, \set{3}}, \set{\set{1,2}, 1}, \set{\set{3}, 1}, \set{\set{1,2}}, \set{\set{3}}, \set{1}, \emptyset}$}
+\solution{For each positive integer $n$, give an example of a set $A_n$ of $n$ elements such that for each pair of elements of $A_n$, one member is an element of the other.}
+{Let $A_0 = \emptyset$ and $A_1 = \set{A_0}$. For $n \geq 2$, let $A_n = \set{A_0, A_1, \dots, A_{n-1}}$.}
+\end{enumerate}
+
+\hrulefill
+
+\renewcommand{\labelenumi}{4.\arabic{enumi}}
+\begin{enumerate}
+\solution{Prove that for all sets $A$ and $B$, $\emptyset \subseteq A \cap B \subseteq A \cup B$.}
+{Let $A$ and $B$ be any sets. Since the empty set has no members, it's clear that for all $x \in \emptyset$ we have that $x \in C$ for any set $C$. Since $A \cap B$ is a set, we have that $\emptyset \subseteq A \cap B$. Now take any $x \in A \cap B$. Then $x \in A$ and $x \in B$ and so, clearly, $x \in A$ or $x \in B$. Therefore $x \in A \cup B$ and so $A \cap B \subseteq A \cup B$. Thus $\emptyset \subseteq A \cap B \subseteq A \cup B$.}
+\solution{Let $\mathbb{Z}$ be the universal set, and let
+\begin{align*}
+A &= \set{x \in \mathbb{Z} \mid \text{for some positive integer } y,\, x = 2y},\\
+B &= \set{x \in \mathbb{Z} \mid \text{for some positive integer } y,\, x = 2y - 1},\\
+C &= \set{x \in \mathbb{Z} \mid x < 10}.
+\end{align*}
+Describe $\comp{A}, \comp{A \cup B}, A - \comp{C}$, and $C - (A \cup B)$, either in prose or by a defining property.}
+{\begin{itemize}
+\item $\comp{A} = \set{x \in \mathbb{Z} \mid x < 1} \cup B$
+\item $\comp{A \cup B} = \set{x \in \mathbb{Z} \mid x < 1}$
+\item $A - \comp{C} = \set{2,3,6,8}$
+\item $C - (A \cup B) = \set{x \in \mathbb{Z} \mid x < 1}$
+\end{itemize}}
+\item Consider the following subsets of $\mathbb{Z^+}$, the set of positive integers:
+\begin{align*}
+A &= \set{x \in \mathbb{Z^+} \mid \text{for some integer } y,\, x = 2y},\\
+B &= \set{x \in \mathbb{Z^+} \mid \text{for some integer } y,\, x = 2y + 1},\\
+C &= \set{x \in \mathbb{Z^+} \mid \text{for some integer } y,\, x = 3y}.
+\end{align*}
+	\begin{enumerate}
+	\solution{Describe $A \cap C, B \cup C$, and $B - C$.}
+	{\begin{itemize}
+		\item $A \cap C = \set{x \in \mathbb{Z^+} \mid \text{for some integer } y,\, x = 6y}$. This is the set of all positive multiples of both 2 and 3 (i.e. all positive multiples of 6).
+		\item $B \cup C = B \cup \set{x \in \mathbb{Z^+} \mid \text{for some integer } y,\, x = 6y}$. This is the set of all positive odd integers along with all even positive multiples of 3 (i.e. all positive multiples of 6).
+		\item $B - C = \set{x \in \mathbb{Z^+} \mid \text{for some integer } y,\, x = 3y + 1 \text{ or } x = 3y + 2}$. This is the set of all positive integers which are not divisible by 3.
+	 \end{itemize}}
+	\solution{Verify that $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.}
+	{In this example:
+	\begin{itemize}
+		\item $A \cap (B \cup C) = A \cap C$
+		\item $A \cap B = \emptyset \Rightarrow (A \cap B) \cup (A \cap C) = A \cap C$
+	\end{itemize}
+	A general proof:\\
+	Assume $x \in A \cap (B \cup C)$. Then by definition of set intersection, $x \in A$ and $x \in B \cup C$. By the definition of set union, $x \in B$ or $x \in C$. If $x \in B$ then we have that $x \in A \cap B$ since $x \in A$. Otherwise, if $x \in C$ then we have that $x \in A \cap C$ since $x \in A$. In both cases we know that $x \in (A \cap B) \cup (A \cap C)$ since both $A \cap B \subseteq (A \cap B) \cup (A \cap C)$ and $A \cap C \subseteq (A \cap B) \cup (A \cap C)$. Therefore $A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C)$. Now assume $x \in (A \cap B) \cup (A \cap C)$. By the definition of set union, $x \in A \cap B$ or $x \in A \cap C$. If $x \in A \cap B$ then by the definition of set intersection, we have that $x \in A$ and $x \in B$. Since $B \subseteq B \cup C$ we know that $x \in B \cup C$. Thus $x \in A \cap (B \cup C)$. Otherwise if $x \in A \cap C$ then by the definition of set intersection, we have that $x \in A$ and $x \in C$. Since $C \subseteq B \cup C$ we know that $x \in B \cup C$. Thus $x \in A \cap (B \cup C)$. Therefore $(A \cap B) \cup (A \cap C) \subseteq  A \cap (B \cup C)$. Therefore $(A \cap B) \cup (A \cap C) =  A \cap (B \cup C)$. $\qed$}
+	\end{enumerate}
+\solution{If $A$ is any set, what are each of the following sets? $A \cap \emptyset$, $A \cup \emptyset$, $A - \emptyset$, $A - A$, $\emptyset - A$.}
+{\begin{itemize}
+\item $A \cap \emptyset = \set{x \mid x \in A \text{ and } x \in \emptyset} = \emptyset$.
+\item $A \cup \emptyset = \set{x \mid x \in A \text{ or } x \in \emptyset} = A$.
+\item $A - \emptyset = \set{x \mid x \in A \text{ and } x \notin \emptyset} = A$.
+\item $A - A = \set{x \mid x \in A \text{ and } x \notin A} = \emptyset$.
+\item $\emptyset - A = \set{x \mid x \in \emptyset \text{ and } x \notin A} = \emptyset$.
+\end{itemize}}
+\solution{Determine $\emptyset \cap \set{\emptyset}, \set{\emptyset} \cap \set{\emptyset}, \set{\emptyset, \set{\emptyset}} - \emptyset, \set{\emptyset, \set{\emptyset}} - \set{\emptyset}, \set{\emptyset,\set{\emptyset}} - \set{\set{\emptyset}}$}
+{\begin{itemize}
+\item $\emptyset \cap \set{\emptyset} = \set{x \mid x \in \emptyset \text{ and } x \in \set{\emptyset}} = \emptyset$.
+\item $\set{\emptyset} \cap \set{\emptyset} = \set{x \mid x \in \set{\emptyset} \text{ and } x \in \set{\emptyset}} = \set{x \mid x \in \set{\emptyset}} = \set{\emptyset}$.
+\item $\set{\emptyset, \set{\emptyset}} - \emptyset = \set{x \mid x \in \set{\emptyset, \set{\emptyset}} \text{ and } x \notin \emptyset} = \set{\emptyset, \set{\emptyset}}$.
+\item $\set{\emptyset, \set{\emptyset}} - \set{\emptyset} = \set{x \mid x \in \set{\emptyset, \set{\emptyset}} \text{ and } x \notin \set{\emptyset}} = \set{\set{\emptyset}}$.
+\item $\set{\emptyset,\set{\emptyset}} - \set{\set{\emptyset}} = \set{x \mid x \in \set{\emptyset,\set{\emptyset}} \text{ and } x \notin \set{\set{\emptyset}}} = \set{\emptyset}$.
+\end{itemize}}
+\solution{Suppose $A$ and $B$ are subsets of $U$. Show that in each of (a), (b), and (c) below, if any one of the relations stated holds, then each of the others holds.
+\begin{enumerate}
+\item $A \subseteq B, \comp{A} \supseteq \comp{B}, A \cup B = B, A \cap B = A$.
+\item $A \cap B = \emptyset, A \subseteq \comp{B}, B \subseteq \comp{A}$.
+\item $A \cup B = U, \comp{A} \subseteq B, \comp{B} \subseteq A$.}
+\end{enumerate}
+{\begin{enumerate}
+\item \begin{enumerate}
+		\item Assume $A \subseteq B$. 
+		\begin{itemize}
+			\item Take $x \notin B$. Assume $x \in A$. Since $A \subseteq B$ we have that $x \in B$. Then by contradiction we must have that $x \notin A$. Therefore $\comp{B} \subseteq \comp{A}$ or $\comp{A} \supseteq \comp{B}$.
+			\item Take $x \in A \cup B$. Then $x \in A$ or $x \in B$. Assume $x \in A$. Then since $A \subseteq B$ we have that $x \in B$. Therefore $A \cup B \subseteq B$. But since $B \subseteq A \cup B$ we have that $A \cup B = B$.
+			\item Take $x \in A$. Because $A \subseteq B$ we have that $x \in B$. Since $x \in A$ and $x \in B$ we have that $x \in A \cap B$ and therefore $A \subseteq A \cap B$. But since $A \cap B \subseteq A$, we have $A \cap B = A$.
+		\end{itemize}
+		\item Assume $\comp{A} \supseteq \comp{B}$.
+		\begin{itemize}
+		\item Take $x \in A$. Assume $x \notin B$. Then because $\comp{A} \supseteq \comp{B}$ we have that $x \notin A$. Then by contradiction we must have that $x \in B$. Therefore $A \subseteq B$.
+		\item Take $x \in A \cup B$. Then by the definition of set union, $x \in A$ or $x \in B$. Assume $x \notin B$. Then because $\comp{A} \supseteq \comp{B}$ we have that $x \notin A$. But then since $x \notin A$ and $x \notin B$ we have that $x \notin A \cup B$. By contradiction we must have that $x \in B$ and thus $A \cup B \subseteq B$. But since $B \subseteq A \cup B$ we have $A \cup B = B$.
+		\item Take $x \in A$. Assume $x \notin B$. Then because $\comp{A} \supseteq \comp{B}$ we have that $x \notin A$. By contradiction, $x \in B$. Thus $A \subseteq A \cap B$. But since $A \cap B \subseteq A$ we have $A \cap B = A$.
+		\end{itemize}
+		\item Assume $A \cup B = B$.
+		\begin{itemize}
+		\item Take $x \in A$. Then $x \in A \cup B = B$ and therefore $A \subseteq B$.
+		\item Take $x \notin B$. Then $x \notin A \cup B$ and so $x \notin A$. Therefore $\comp{A} \supseteq \comp{B}$.
+		\item Take $x \in A$. Then $x \in A \cup B = B$. Since $x \in A$ and $x \in B$ then $x \in A \cap B$ and so $A \subseteq A \cap B$. But since $A \cap B \subseteq A$ we have $A \cap B = A$.
+		\end{itemize}
+		\item Assume $A \cap B = A$.
+		\begin{itemize}
+		\item Take $x \in A$. Then $x \in A \cap B$ and so $x \in B$. Therefore $A \subseteq B$.
+		\item Take $x \notin B$. Then $x \notin A \cap B$ and so $x \notin A$. Therefore $\comp{A} \supseteq \comp{B}$.
+		\item Take $x \in A \cup B$. Then $x \in A$ or $x \in B$. Assume $x \notin B$. Then $x \notin A \cap B = A$ and so $x \notin A \cup B$. By contradiction, we must have the $x \in B$. Then $A \cup B \subseteq B$. But since $B \subseteq A \cup B$ we have that $A \cup B = B$.
+		\end{itemize}
+		\end{enumerate}
+\item \begin{enumerate}
+		\item Assume $A \cap B = \emptyset$.
+		\begin{itemize}
+			\item Take $x \in A$. Since $A \cap B = \emptyset$, $x \notin B$. Then $A \subseteq \comp{B}$.
+			\item Take $x \in B$. Since $A \cap B = \emptyset$, $x \notin A$. Then $B \subseteq \comp{A}$.
+		\end{itemize}
+		\item Assume $A \subseteq \comp{B}$.
+		\begin{itemize}
+			\item Take $x \in A$. Then since $A \subseteq \comp{B}$ we have $x \notin B$. Now take $x \in B$. Assume $x \in A$. But then since $A \subseteq \comp{B}$ we have $x \notin B$. By contradiction we must have that $x \notin A$. Thus $x \in A \Rightarrow x \notin B$ and $x \in B \Rightarrow x \notin A$ and so $A \cap B = \emptyset$.
+			\item Take $x \in B$. Assume $x \in A$. Then since $A \subseteq \comp{B}$ we have that $x \notin B$. Then by contradiction, we must have $x \notin A$ and so $B \subseteq \comp{A}$.
+		\end{itemize}
+		\item Assume $B \subseteq \comp{A}$.
+		\begin{itemize}
+			\item Take $x \in B$. Then since $B \subseteq \comp{A}$ we have $x \notin A$. Now take $x \in A$ and assume $x \in B$. But since $B \subseteq \comp{A}$ we have $x \notin A$. Then by contradiction, we must have that $x \notin B$. Thus $x \in A \Rightarrow x \notin B$ and $x \in B \Rightarrow x \notin A$ and so $A \cap B = \emptyset$.
+			\item Take $x \in A$. Assume $x \in B$. Then since $B \subseteq \comp{A}$ we have $x \notin A$. Then by contradiction we must have that $x \notin B$. Therefore $A \subseteq \comp{B}$.
+		\end{itemize}
+	  \end{enumerate}
+\item \begin{enumerate}
+		\item Assume $A \cup B = U$.
+		\begin{itemize}
+			\item Take $x \notin A$. Assume $x \notin B$. Then since $x \notin A$ and $x \notin B$, we have that $x \notin A \cup B = U$. But since $A \subseteq U$ this is a contradiction. So we must have that $x \in B$. Therefore $\comp{A} \subseteq B$.
+			\item Take $x \notin B$. Assume $x \notin A$. Then since $x \notin A$ and $x \notin B$, we have that $x \notin A \cup B = U$. But since $B \subseteq U$ this is a contradiction. So we must have that $x \in A$. Therefore $\comp{B} \subseteq A$.
+		\end{itemize}
+		\item Assume $\comp{A} \subseteq B$.
+		\begin{itemize}
+			\item Take $x \in U$. Then either $x \in A$ or $x \notinin A$. Assume that $x \in A$. Then $x \in A \cup B$. Now assume that $x \notin A$. Then since $\comp{A} \subseteq B$ we have that $x \in B$. Then $x \in A \cup B$. Therefore $U \subseteq A \cup B$. But since $A \cup B \subseteq U$ we must have that $A \cup B = U$. 
+			\item Take $x \notin B$. Assume$ \comp{B} \subseteq A$
+		\end{itemize}
+		\item Assume $ \comp{B} \subseteq A$.
+		\begin{itemize}
+			\item ,
+			\item ,
+		\end{itemize}
+	\end{enumerate}
+\end{enumerate}}
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

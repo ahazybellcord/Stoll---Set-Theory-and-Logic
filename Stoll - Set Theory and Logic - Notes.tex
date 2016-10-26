@@ -1,0 +1,49 @@
+\documentclass[12pt]{book}
+\parindent=0px
+\usepackage{amssymb, amsmath, fullpage, graphicx}
+\usepackage{enumitem, siunitx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\input{./macros}
+
+\begin{document}
+\chapter{Sets and Relations}
+
+\section{Cantor's Concept of a Set}
+A \defn{set} $S$ is any collection of definite, distinguishable objects of our intuition or of our intellect to be conceived as a whole. The objects are called the \defn{elements} or \defn{members} of $S$.
+
+\section{The Basis of Intuitive Set Theory}
+\defn{Membership relation}: $x \in A$ if the object $x$ is a member of the set $A$. If $x$ is not a member of $A$ then $x \notin A$. $x_1, x_2, \dots, x_n \in A$ is shorthand for $x_1 \in A \wedge x_2 \in A \dots x_n \in A$.\\
+\defn{The intuitive principle of extension}: Two sets are equal iff they have the same members.
+\defn{Set equality}: The equality of two sets $X$ and $Y$ will be denoted by $X = Y$ and inequality of $X$ and $Y$ by $X \neq Y$. Among the basic properties of this relation are:
+\begin{gather*}
+X = X,\\X = Y \Rightarrow Y = X,\\ X = Y \wedge Y = Z \Rightarrow X = Z,
+\end{gather*}
+for all sets $X, Y$, and $Z$.\\
+\defn{unit set}: a set $\set{x}$ whose sole member is $x$.\\
+\defn{collection of sets}: a set whose members are sets.\\
+\defn{The intuitive principle of abstraction}: A formula $P(x)$ defines a set $A$ by the convention that the members of $A$ are exactly those objects $a$ such that $P(a)$ is a true statement, denoted by $A = \set{x \mid P(x)}$.\\
+Note: $\set{x \in A \mid P(x)} := \set{x \mid x \in A \wedge P(x)}$. For a property $P$ and function $f$ we can write $\set{f(x)\mid P(x)} := \set{y \mid \exists x\colon P(x) \wedge y = f(x)}$.
+
+\section{Inclusion}
+If $A$ and $B$ are sets, then $A$ is \defn{included in} $B$ iff each member of $A$ is a member of $B$. Symbolized: $A \subseteq B$. We also say that $A$ is a \defn{subset} of $B$. Equivalently, $B$ \defn{includes} $A$, symbolized by $B \supseteq A$.\\ The set $A$ is \defn{properly included in} $B$ ($A$ is a \defn{proper subset} of $B$ / $B$ \defn{properly includes} $A$) iff $A \subseteq B$ and $A \neq B$.\\ Among the basic properties of the inclusion relation are
+\begin{gather*}
+X \subseteq X;\\ X \subseteq Y \wedge Y \subseteq Z \Rightarrow X \subseteq Z;\\ X \subseteq Y \wedge Y \subseteq X \Rightarrow X = Y.
+\end{gather*}
+\defn{empty set}: $\set{x \in A \mid x \neq x}$ for any set $A$ is the set with no elements, symbolized by $\emptyset$.\\
+\defn{power set}: the set of all subsets of a given set. $\mathcal{P}(A) = \set{B \mid B \subseteq A}$ for a given set $A$.
+
+\section{Operations for Sets}
+\defn{union}: for sets $A$ and $B$, the set of all objects which are members of either $A$ or $B$. $A \cup B = \set{x \mid x \in A \text{ or } x \in B}$. (\defn{sum}/\defn{join})\\
+\defn{intersection}: for sets $A$ and $B$, the set of all objects which are members of both $A$ and $B$. $A \cap B = \set{x \mid x \in A \text{ and } x \in B}$. (\defn{product}/\defn{meet})\\
+\defn{disjoint}: $A \cap B = \emptyset$ for sets $A$ and $B$.\\
+\defn{intersect}: $A \cap B \neq \emptyset$ for sets $A$ and $B$.\\
+\defn{disjoint collection}: for a collection of sets, each distinct pair of its member sets is disjoint.\\
+\defn{partition}: for a set $X$, a disjoint collection $\mathcal{A}$ of nonempty and distinct subsets of $X$ such that each member of $X$ is a members of some (exactly one) member of $\mathcal{A}$.\\
+\defn{absolute complement} of $A$: $\comp{A} = \set{x \mid x \notin A}$, the set of all members which are not in $A$.\\
+\defn{relative complement} of $A$ with respect to $X$: $X - A = X \cap \comp{A} = \set{x \in X \mid x \notin A}$, the set of those members of $X$ which are not members of $A$.\\
+\defn{symmetric difference} of $A$ and $B$: $A + B = (A - B) \cup (B - A)$.\\
+\defn{universal set}: the set $U$ such that all sets under consideration in a certain discussion are subsets of $U$.\\
+
+\end{document}
