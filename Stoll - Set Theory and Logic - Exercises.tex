@@ -197,17 +197,20 @@ C &= \set{x \in \mathbb{Z^+} \mid \text{for some integer } y,\, x = 3y}.
 		\end{itemize}
 		\item Assume $\comp{A} \subseteq B$.
 		\begin{itemize}
-			\item Take $x \in U$. Then either $x \in A$ or $x \notinin A$. Assume that $x \in A$. Then $x \in A \cup B$. Now assume that $x \notin A$. Then since $\comp{A} \subseteq B$ we have that $x \in B$. Then $x \in A \cup B$. Therefore $U \subseteq A \cup B$. But since $A \cup B \subseteq U$ we must have that $A \cup B = U$. 
+			\item Take $x \in U$. Then either $x \in A$ or $x \notin A$. Assume that $x \in A$. Then $x \in A \cup B$. Now assume that $x \notin A$. Then since $\comp{A} \subseteq B$ we have that $x \in B$. Then $x \in A \cup B$. Therefore $U \subseteq A \cup B$. But since $A \cup B \subseteq U$ we must have that $A \cup B = U$. 
 			\item Take $x \notin B$. Assume$ \comp{B} \subseteq A$
 		\end{itemize}
-		\item Assume $ \comp{B} \subseteq A$.
+		\item Assume $\comp{B} \subseteq A$.
 		\begin{itemize}
-			\item ,
-			\item ,
+			\item Take $x \in U$. Then $x \in B$ or $x \notin B$. If $x \in B$ then $x \in A \cup B$. If $x \notin B$ then since $\comp{B} \subseteq A$ we have that $x \in A$ and so $x \in A \cup B$. Therefore $U \subseteq A \cup B$. But since $A \cup B \subseteq U$ we must have that $A \cup B = U$.
+			\item Take $x \notin A$ and assume $x \notin B$. Then since $\comp{B} \subseteq A$ we have that $x \in A$. Then by contradiction we must have that $x \in B$ and so $\comp{A} \subseteq B$.
 		\end{itemize}
 	\end{enumerate}
 \end{enumerate}}
-
+\solution{Prove that for all sets $A,B$, and $C$, $$(A \cap B) \cup C = A \cap (B \cup C) \text{ iff } C \subseteq A.$$}
+{($\Rightarrow$) Assume $(A \cap B) \cup C = A \cap (B \cup C)$. Let $x \in C$. Then $x \in (A \cap B) \cup C$. Since $(A \cap B) \cup C = A \cap (B \cup C)$ we have that $x \in A \cap (B \cup C)$ and thus $x \in A$. Therefore $C \subseteq A$.\\ ($\Leftarrow$) Assume $C \subseteq A$. Let $x \in (A \cap B) \cup C$. Then $x \in A \cap B$ or $x \in C$. Assume $x \in A \cap B$. Then $x \in A$ and $x \in B$. Since $x \in B$ then $x \in B \cup C$. Since $x \in A$ and $x \in B \cup C$ we have that $x \in A \cap (B \cup C)$. Now assume $x \in C$. Then $x \in B \cup C$. Since $C \subseteq A$ we also have that $x \in A$. Thus $x \in A \cap (B \cup C)$. Therefore $(A \cap B) \cup C \subseteq A \cap (B \cup C)$. Now let $x \in A \cap (B \cup C)$. Then $x \in A$ and $x \in B \cup C$. Then $x \in B$ or $x \in C$. Assume $x \in B$. Then since $x \in A$ and $x \in B$ we have that $x \in A \cap B$. Therefore $x \in (A \cap B) \cup C$. Now assume $x \in C$. Then $x \in (A \cap B) \cup C$. Therefore $A \cap (B \cup C) \subseteq (A \cap B) \cup C$ and so we can conclude that $(A \cap B) \cup C = A \cap (B \cup C)$. $\qed$}
+\solution{Prove that for all sets $A,B$, and $C$, $$(A - B) - C = (A - C) - (B - C).$$}
+{Let $x \in (A - B) - C$. Then $x \in A - B$ and $x \notin C$. Since $x \in A - B$ we have that $x \in A$ and $x \notin B$. Then since $x \in A$ and $x \notin C$ we have that $x \in A - C$. Since $x \notin B$ we have that $x \notin B - C$. Then since $x \in A - C$ and $x \notin B - C$ we have that $x \in (A - C) - (B - C)$. Now let $x \in (A - C) - (B - C)$. Then $x \in A - C$ and $x \notin B - C$. Then since $x \in A - C$ we have that $x \in A$ and $x \notin C$. Since $x \notin B - C$ we have that either $x \notin B$ or $x \in C$. But $x \in C$ is a contradiction because $x \notin C$. Therefore $x \notin B$. Then since $x \in A$ and $x \notin B$ we have that $x \in A - B$ and since $x \notin C$ we have that $x \in (A - B) - C$. Therefore $(A - C) - (B - C) \subseteq (A - B) - C$ and thus $(A - B) - C = (A - C) - (B - C)$. $\qed$}
 
 \end{enumerate}
 
