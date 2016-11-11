@@ -46,4 +46,58 @@ X \subseteq X;\\ X \subseteq Y \wedge Y \subseteq Z \Rightarrow X \subseteq Z;\\
 \defn{symmetric difference} of $A$ and $B$: $A + B = (A - B) \cup (B - A)$.\\
 \defn{universal set}: the set $U$ such that all sets under consideration in a certain discussion are subsets of $U$.\\
 
+\newpage
+
+\section{The Algebra of Sets}
+\defn{identities}: equations which are true whatever the universal set $U$ and no matter what particular subsets the letters (other than $U$ and $\emptyset$) represent.\\ \linebreak
+\underline{\textsc{Theorem 5.1}}: For any subsets $A, B, C$ of a set $U$ the following equations are identities. Here $\comp{A}$ is an abbreviation for $U - A$.
+\begin{tabular}{ll}
+1. $A \cup (B \cup C) = (A \cup B) \cup C$.& 1'. $A \cap (B \cap C) = (A \cap B) \cap C$.\\
+2. $A \cup B = B \cup A$.& 2'. $A \cap B = B \cap A$.\\
+3. $A \cup (B \cap C) = (A \cup B) \cap (B \cup C)$.& 3'. $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.\\
+4. $A \cup \emptyset = A$.& 4'. $A \cap U = A$.\\
+5. $A \cup \comp{A} = U$& 5'. $A \cap \comp{A} = \emptyset$.
+\end{tabular}\\
+\underline{\textsc{Proof}}:\\
+\small \underline{Lemma}: Let $X,Y$ be subsets of $U$. Then $X \subseteq X \cup Y$ and $X \subseteq Y \cup X$.\\ \underline{Proof}: Assume $x \in X$ and $x \notin X \cup Y$. Then $x \notin \set{z \mid z \in X \text{ or } z \in Y} \Rightarrow x \notin \set{z \mid z \in X} = X$ which is a contradiction. Now assume $x \in X$ and $x \notin Y \cup X$. Then $x \notin \set{z \mid z \in Y \text{ or } z \in X} \Rightarrow x \notin \set{z \mid z \in X} = X$ which is a contradiction.\\ \normalsize
+1. Assume $x \in A \cup (B \cup C)$. Then $x \in A$ or $x \in B \cup C$. If $x \in A$ then $x \in A \cup B$ and so $x \in (A \cup B) \cup C$. Otherwise if $x \in B \cup C$ then $x \in B$ or $x \in C$. If $x \in B$ then $x \in (A \cup B)$ and so $x \in (A \cup B) \cup C$. If $x \in C$ then $x \in (A \cup B) \cup C$. Therefore $A \cup (B \cup C) \subseteq (A \cup B) \cup C$.\\ Now assume $x \in (A \cup B) \cup C$. Then $x \in A \cup B$ or $x \in C$. If $x \in A \cup B$ then $x \in A$ or $x \in B$. If $x \in A$ then $x \in A \cup (B \cup C)$. If $x \in B$ then $x \in (B \cup C)$ and so $x \in A \cup (B \cup C)$. Otherwise if $x \in C$ then $x \in B \cup C$ and so $x \in A \cup (B \cup C)$. Therefore $(A \cup B) \cup C \subseteq A \cup (B \cup C)$. Hence $A \cup (B \cup C) = (A \cup B) \cup C$.\\
+1'. Assume $x \in A \cap (B \cap C)$. Then $x \in A$ and $x \in B \cap C$. Since $x \in B \cap C$ we have $x \in B$ and $x \in C$. Then since $x \in A$ and $x \in B$ we have $x \in A \cap B$. Since $x \in C$ we have $x \in (A \cap B) \cap C$. Therefore $A \cap (B \cap C) \subseteq (A \cap B) \cap C$.\\ Now assume $x \in (A \cap B) \cap C$. Then $x \in A \cap B$ and $x \in C$. Since $x \in A \cap B$ we have $x \in A$ and $x \in B$. Then since $x \in B$ and $x \in C$ we have $x \in B \cap C$. Since $x \in A$ we have $x \in A \cap (B \cap C)$. Therefore $(A \cap B) \cap C \subseteq A \cap (B \cap C)$. Hence $A \cap (B \cap C) = (A \cap B) \cap C$.\\
+2. Assume $x \in A \cup B$. Then $x \in A$ or $x \in B$. In either case $x \in B \cup A$ and so $A \cup B \subseteq B \cup A$. Now assume $x \in B \cup A$. Then $x \in B$ or $x \in A$. In either case $x \in A \cup B$ and so $B \cup A \subseteq A \cup B$. Hence $A \cup B = B \cup A$.\\
+2'. Assume $x \in A \cap B$. Then $x \in A$ and $x \in B$ and so $x \in B \cap A$. Therefore $A \cap B \subseteq B \cap A$. Now assume $x \in B \cap A$. Then $x \in B$ and $x \in A$ and so $x \in A \cap B$. Therefore $B \cap A \subseteq B \cap A$. Hence $A \cap B = B \cap A$.\\
+3. Assume $x \in A \cup (B \cap C)$. Then $x \in A$ or $x \in B \cap C$. If $x \in A$ then $x \in A \cup B$ and $x \in A \cup C$ and so $x \in (A \cup B) \cap (A \cup C)$. Otherwise if $x \in B \cap C$ then $x \in B$ and $x \in C$. Since $x \in B$ we have $x \in A \cup B$. Since $x \in C$ we have $x \in A \cup C$. Then $x \in (A \cup B) \cap (A \cup C)$ and therefore $A \cup (B \cap C) \subseteq (A \cup B) \cap (A \cup C)$.\\ Now assume $x \in (A \cup B) \cap (A \cup C)$. Then $x \in A \cup B$ and $x \in A \cup C$. Since $x \in A \cup B$ we have $x \in A$ or $x \in B$. If $x \in A$ then $x \in A \cup (B \cap C)$. Otherwise if $x \in B$ then $x \in A \cup B$. Since $x \in A \cup C$ we also have that $x \in A$ or $x \in C$. If $x \in A$ then $x \in A \cup (B \cap C)$. Otherwise if $x \in C$ then since $x \in B$ we have $x \in B \cap C$ and so $x \in A \cup (B \cap C)$. Therefore $(A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C)$. Hence $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$.\\
+3'. Assume $x \in A \cap (B \cup C)$. Then $x \in A$ and $x \in B \cup C$. If $x \in B$ then since $x \in A$ we have $x \in A \cap B$ and so $x \in (A \cap B) \cup (A \cap C)$. Otherwise if $x \in C$ then since $x \in A$ we have $x \in A \cap C$ and so $x \in (A \cap B) \cup (A \cap C)$. Therefore $A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C)$. Now assume $x \in (A \cap B) \cup (A \cap C)$. Then $x \in A \cap B$ or $x \in A \cap C$. If $x \in A \cap B$ then $x \in A$ and $x \in B$. Since $x \in B$ we have $x \in B \cup C$. Since we also have $x \in A$ then $x \in A \cap (B \cup C)$. Otherwise if $x \in A \cap C$ then $x \in A$ and $x \in C$. Since $x \in C$ we have $x \in B \cup C$. Since we also have $x \in A$ then $x \in A \cap (B \cup C)$. Therefore $(A \cap B) \cup (A \cap C) \subseteq A \cap (B \cup C)$. Hence $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.\\
+4. Assume $x \in A \cup \emptyset$. Then $x \in A$ or $x \in \emptyset$. Since $x \in \emptyset$ is impossible, we must have the $x \in A$ and so $A \cup \emptyset \subseteq A$. Now assume $x \in A$ then $x \in A \cup \emptyset$ and so $A \subseteq A \cup \emptyset$. Hence $A \cup \emptyset = A$.\\
+4'. Assume $x \in A \cap U$. Then $x \in A$ and $x \in U$. Therefore $A \cap U \subseteq A$. Now assume $x \in A$. Then since $A \subseteq U$ we have $x \in U$ and so $x \in A \cap U$. Therefore $A \subseteq A \cap U$. Hence $A \cap U = A$.\\
+5. Assume $x \in A \cup \comp{A}$. Then $x \in A$ or $x \in \comp{A}$. Since $A \subseteq U$ and $\comp{A} \subseteq U$ in either case we have $x \in U$ and so $A \cup \comp{A} \subseteq U$. Now assume $x \in U$. Then $x \in A$ or $X \notin A$ for any set $A$. Thus $x \in A$ or $x \in \comp{A}$ and so $x \in A \cup \comp{A}$. Therefore $U \subseteq A \cup \comp{A}$. Hence $A \cup \comp{A} = U$.\\
+5'. Assume $x \in A \cap \comp{A}$. Then $x \in A$ and $x \in \comp{A}$. Since $x \in \comp{A}$ we have $x \notin A$. Since $x \in A$ and $x \notin A$ we have $x \in \emptyset$. Therefore $A \cap \comp{A} \subseteq \emptyset$. Since $\emptyset \subseteq X$ for any set $X$ we have $\emptyset \subseteq A \cap \comp{A}$. Hence $A \cap \comp{A} = \emptyset$. $\qed$\\
+
+\underline{General associative law for set union}: The sets obtainable from given sets $A_1, A_2, \dots, A_n$ in that order, by use of the operation of union are all equal to one another. The set defined by $A_1, A_2, \dots, A_n$ in this way will be written as $$A_1 \cup A_2 \cup \dots \cup A_n.$$
+
+\underline{General associative law for set intersection}: The sets obtainable from given sets $A_1, A_2, \dots, A_n$ in that order, by use of the operation of intersection are all equal to one another. The set defined by $A_1, A_2, \dots, A_n$ in this way will be written as $$A_1 \cap A_2 \cap \dots \cap A_n.$$
+
+\underline{General commutative law for set union}: If $1',2',\dots,n'$ are $1,2,\dots,n$ in any order, then $$A_1 \cup A_2 \cup \dots \cup A_n = A_{1'} \cup A_{2'} \cup \dots \cup A_{n'}.$$
+
+\underline{General commutative law for set intersection}: If $1',2',\dots,n'$ are $1,2,\dots,n$ in any order, then $$A_1 \cap A_2 \cap \dots \cap A_n = A_{1'} \cap A_{2'} \cap \dots \cap A_{n'}.$$
+
+\underline{General distributive law for set union}: $$A \cup (B_1 \cap B_2 \cap \dots \cap B_n) = (A \cup B_1) \cap (A \cup B_2) \cap \dots \cap (A \cup B_n).$$\\
+
+\underline{General distributive law for set intersection}: $$A \cap (B_1 \cup B_2 \cup \dots \cup B_n) = (A \cap B_1) \cup (A \cap B_2) \cup \dots \cup (A \cap B_n).$$\\
+
+\defn{dual}: An equation, or an expression, or a statement within the framework of the algebra of sets obtained from another by interchanging $\cup$ and $\cap$ along with $\emptyset$ and $U$.\\
+
+\defn{principle of duality} for the algebra of sets: If $T$ is any theorem expressed in terms of $\cup$, $\cap$, and $\comp{\phantom{A}}$, then the dual of $T$ is also a theorem.\\
+
+\underline{\textsc{Theorem 5.2}}: For all subsets $A$ and $B$ of a set $U$, the following statements are valid. Here $\comp{A}$ is an abbreviation for $U - A$.\\
+\begin{tabular}{ll}
+6. If, for all $A$, $A \cup B = A$, then $B = \emptyset$.& 6'. If, for all $A$, $A \cap B = A$ then $B = U$.\\
+7,7'. If $A \cup B = U$ and $A \cap B = \emptyset$, then $B = \comp{A}$.\\
+8,8'. $\comp{\comp{A}} = A$.\\
+9. $\comp{\emptyset} = U$.& 9'. $\comp{U} = \emptyset$.\\
+10. $A \cup A = A$& 10'. $A \cap A = A$.\\
+11. $A \cup U = U$& 11'. $A \cap \emptyset = \emptyset$.\\
+12. $A \cup (A \cap B) = A$. &12'. $A \cap (A \cup B) = A$.\\
+13. $\comp{A \cup B} = \comp{A} \cap \comp{B}$& 13'. $\comp{A \cap B} = \comp{A} \cup \comp{B}$.
+\end{tabular}\\
+\underline{\textsc{Proof}}:\\
+
 \end{document}

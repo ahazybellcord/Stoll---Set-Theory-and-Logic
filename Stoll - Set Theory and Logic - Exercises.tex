@@ -1,7 +1,7 @@
 \documentclass[12pt]{book}
 \parindent=0px
 \usepackage{amssymb, amsmath, fullpage, graphicx}
-\usepackage{enumitem, siunitx}
+\usepackage{enumitem, siunitx, tikz}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
@@ -213,14 +213,23 @@ C &= \set{x \in \mathbb{Z^+} \mid \text{for some integer } y,\, x = 3y}.
 {Let $x \in (A - B) - C$. Then $x \in A - B$ and $x \notin C$. Since $x \in A - B$ we have that $x \in A$ and $x \notin B$. Then since $x \in A$ and $x \notin C$ we have that $x \in A - C$. Since $x \notin B$ we have that $x \notin B - C$. Then since $x \in A - C$ and $x \notin B - C$ we have that $x \in (A - C) - (B - C)$. Now let $x \in (A - C) - (B - C)$. Then $x \in A - C$ and $x \notin B - C$. Then since $x \in A - C$ we have that $x \in A$ and $x \notin C$. Since $x \notin B - C$ we have that either $x \notin B$ or $x \in C$. But $x \in C$ is a contradiction because $x \notin C$. Therefore $x \notin B$. Then since $x \in A$ and $x \notin B$ we have that $x \in A - B$ and since $x \notin C$ we have that $x \in (A - B) - C$. Therefore $(A - C) - (B - C) \subseteq (A - B) - C$ and thus $(A - B) - C = (A - C) - (B - C)$. $\qed$}
 \item{\begin{enumerate}
 \solution{Draw the Venn diagram of the symmetric difference, $A + B$, of sets $A$ and $B$.}
-{.}
+{... TO DO ...}
 \solution{Using a Venn diagram, show that the symmetric difference is a commutative and associative operation.}
-{.}
+{... TO DO ...}
 \solution{Show that for every set $A$, $A + A = \emptyset$ and $A + \emptyset = A$}
 {Let $A$ be a set. Let $x \in A + A = (A - A) \cup (A - A)$. Then $x \in A - A = \set{x \mid x \in A \text{ and } x \notin A} = \emptyset$. Therefore $A + A \subseteq \emptyset$. Then since $\emptyset \subseteq A + A$ we have that $A + A = \emptyset$. $\qed$\\ Let $x \in A + \emptyset = (A - \emptyset) \cup (\emptyset - A)$. Then $x \in A - \emptyset$ or $x \in \emptyset - A$. Assume $x \in \emptyset - A$. Then $x \in \emptyset$. But this is a contradiction and so we have that $x \in A - \emptyset$. Then $x \in A$. Therefore $A + \emptyset \subseteq A$. Now let $x \in A$. Since $x \notin \emptyset$ we have that $x \in A - \emptyset$. Then $x \in (A - \emptyset) \cup (\emptyset - A) = A + \emptyset$. Thus $A \subseteq A + \emptyset$ and therefore $A + \emptyset = A$. $\qed$}
-
-
 \end{enumerate}}
+\solution{The Venn diagram for subsets $A, B$, and $C$ of $U$, in general, divides the rectangle representing $U$ into eight nonoverlapping regions. Label each region with a combination of $A, B$, and $C$ which represents exactly that region.}
+{... TO DO ...}
+\item{With the aid of a Venn diagram investigate the validity of each of the following inferences:
+\begin{enumerate}
+\solution{If $A, B$, and $C$ are subsets of $U$ such that $A \cap B \subseteq \comp{C}$ and $A \cup C \subseteq B$, then $A \cap C = \emptyset$.}
+{... TO DO ...}
+\solution{If $A, B$, and $C$ are subsets of $U$ such that $A \subseteq \comp{B \cup C}$ and $B \subseteq \comp{A \cup C}$, then $B = \emptyset$.}
+{... TO DO ...}
+\end{enumerate}}
+
+
 
 \end{enumerate}
 
