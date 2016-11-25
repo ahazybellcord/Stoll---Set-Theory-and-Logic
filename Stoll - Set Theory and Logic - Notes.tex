@@ -14,7 +14,7 @@
 A \defn{set} $S$ is any collection of definite, distinguishable objects of our intuition or of our intellect to be conceived as a whole. The objects are called the \defn{elements} or \defn{members} of $S$.
 
 \section{The Basis of Intuitive Set Theory}
-\defn{Membership relation}: $x \in A$ if the object $x$ is a member of the set $A$. If $x$ is not a member of $A$ then $x \notin A$. $x_1, x_2, \dots, x_n \in A$ is shorthand for $x_1 \in A \wedge x_2 \in A \dots x_n \in A$.\\
+\defn{Membership relation}: $x \in A$ if the object $x$ is a member of the set $A$. If $x$ is not a member of $A$ then $x \notin A$. $x_1, x_2, \dots, x_n \in A$ is shorthand for $x_1 \in A \wedge x_2 \in A \wedge \dots \wedge x_n \in A$.\\
 \defn{The intuitive principle of extension}: Two sets are equal iff they have the same members.
 \defn{Set equality}: The equality of two sets $X$ and $Y$ will be denoted by $X = Y$ and inequality of $X$ and $Y$ by $X \neq Y$. Among the basic properties of this relation are:
 \begin{gather*}
@@ -37,6 +37,10 @@ X \subseteq X;\\ X \subseteq Y \wedge Y \subseteq Z \Rightarrow X \subseteq Z;\\
 \section{Operations for Sets}
 \defn{union}: for sets $A$ and $B$, the set of all objects which are members of either $A$ or $B$. $A \cup B = \set{x \mid x \in A \text{ or } x \in B}$. (\defn{sum}/\defn{join})\\
 \defn{intersection}: for sets $A$ and $B$, the set of all objects which are members of both $A$ and $B$. $A \cap B = \set{x \mid x \in A \text{ and } x \in B}$. (\defn{product}/\defn{meet})\\
+
+\thm{Lemma}: For every pair of sets $A$ and $B$ the following inclusions hold: $$\emptyset \subseteq A \cap B \subseteq A \subseteq A \cup B.$$
+\thm{Proof}: Take $x \in \emptyset$. Since this is false, we can conclude $x \in A \cap B$ and so $\emptyset \subseteq A \cap B$. Now take $x \in A \cap B$. Then $x \in \set{y \mid y \in A \text{ and } y \in B}$ and so $x \in \set{y \mid y \in A} = A$ and thus $A \cap B \subseteq A$. Now take $x \in A$. Then we must have $x \in \set{y \mid y \in A \text{ or } y \in B} = A \cup B$. Then $A \subseteq A \cup B$. $\qed$\\
+
 \defn{disjoint}: $A \cap B = \emptyset$ for sets $A$ and $B$.\\
 \defn{intersect}: $A \cap B \neq \emptyset$ for sets $A$ and $B$.\\
 \defn{disjoint collection}: for a collection of sets, each distinct pair of its member sets is disjoint.\\
@@ -50,7 +54,7 @@ X \subseteq X;\\ X \subseteq Y \wedge Y \subseteq Z \Rightarrow X \subseteq Z;\\
 
 \section{The Algebra of Sets}
 \defn{identities}: equations which are true whatever the universal set $U$ and no matter what particular subsets the letters (other than $U$ and $\emptyset$) represent.\\ \linebreak
-\underline{\textsc{Theorem 5.1}}: For any subsets $A, B, C$ of a set $U$ the following equations are identities. Here $\comp{A}$ is an abbreviation for $U - A$.
+\thm{Theorem 5.1}: For any subsets $A, B, C$ of a set $U$ the following equations are identities. Here $\comp{A}$ is an abbreviation for $U - A$.\\
 \begin{tabular}{ll}
 1. $A \cup (B \cup C) = (A \cup B) \cup C$.& 1'. $A \cap (B \cap C) = (A \cap B) \cap C$.\\
 2. $A \cup B = B \cup A$.& 2'. $A \cap B = B \cap A$.\\
@@ -58,7 +62,7 @@ X \subseteq X;\\ X \subseteq Y \wedge Y \subseteq Z \Rightarrow X \subseteq Z;\\
 4. $A \cup \emptyset = A$.& 4'. $A \cap U = A$.\\
 5. $A \cup \comp{A} = U$& 5'. $A \cap \comp{A} = \emptyset$.
 \end{tabular}\\
-\underline{\textsc{Proof}}:\\
+\thm{Proof}:\\
 \small \underline{Lemma}: Let $X,Y$ be subsets of $U$. Then $X \subseteq X \cup Y$ and $X \subseteq Y \cup X$.\\ \underline{Proof}: Assume $x \in X$ and $x \notin X \cup Y$. Then $x \notin \set{z \mid z \in X \text{ or } z \in Y} \Rightarrow x \notin \set{z \mid z \in X} = X$ which is a contradiction. Now assume $x \in X$ and $x \notin Y \cup X$. Then $x \notin \set{z \mid z \in Y \text{ or } z \in X} \Rightarrow x \notin \set{z \mid z \in X} = X$ which is a contradiction.\\ \normalsize
 1. Assume $x \in A \cup (B \cup C)$. Then $x \in A$ or $x \in B \cup C$. If $x \in A$ then $x \in A \cup B$ and so $x \in (A \cup B) \cup C$. Otherwise if $x \in B \cup C$ then $x \in B$ or $x \in C$. If $x \in B$ then $x \in (A \cup B)$ and so $x \in (A \cup B) \cup C$. If $x \in C$ then $x \in (A \cup B) \cup C$. Therefore $A \cup (B \cup C) \subseteq (A \cup B) \cup C$.\\ Now assume $x \in (A \cup B) \cup C$. Then $x \in A \cup B$ or $x \in C$. If $x \in A \cup B$ then $x \in A$ or $x \in B$. If $x \in A$ then $x \in A \cup (B \cup C)$. If $x \in B$ then $x \in (B \cup C)$ and so $x \in A \cup (B \cup C)$. Otherwise if $x \in C$ then $x \in B \cup C$ and so $x \in A \cup (B \cup C)$. Therefore $(A \cup B) \cup C \subseteq A \cup (B \cup C)$. Hence $A \cup (B \cup C) = (A \cup B) \cup C$.\\
 1'. Assume $x \in A \cap (B \cap C)$. Then $x \in A$ and $x \in B \cap C$. Since $x \in B \cap C$ we have $x \in B$ and $x \in C$. Then since $x \in A$ and $x \in B$ we have $x \in A \cap B$. Since $x \in C$ we have $x \in (A \cap B) \cap C$. Therefore $A \cap (B \cap C) \subseteq (A \cap B) \cap C$.\\ Now assume $x \in (A \cap B) \cap C$. Then $x \in A \cap B$ and $x \in C$. Since $x \in A \cap B$ we have $x \in A$ and $x \in B$. Then since $x \in B$ and $x \in C$ we have $x \in B \cap C$. Since $x \in A$ we have $x \in A \cap (B \cap C)$. Therefore $(A \cap B) \cap C \subseteq A \cap (B \cap C)$. Hence $A \cap (B \cap C) = (A \cap B) \cap C$.\\
@@ -87,7 +91,7 @@ X \subseteq X;\\ X \subseteq Y \wedge Y \subseteq Z \Rightarrow X \subseteq Z;\\
 
 \defn{principle of duality} for the algebra of sets: If $T$ is any theorem expressed in terms of $\cup$, $\cap$, and $\comp{\phantom{A}}$, then the dual of $T$ is also a theorem.\\
 
-\underline{\textsc{Theorem 5.2}}: For all subsets $A$ and $B$ of a set $U$, the following statements are valid. Here $\comp{A}$ is an abbreviation for $U - A$.\\
+\thm{Theorem 5.2}: For all subsets $A$ and $B$ of a set $U$, the following statements are valid. Here $\comp{A}$ is an abbreviation for $U - A$.\\
 \begin{tabular}{ll}
 6. If, for all $A$, $A \cup B = A$, then $B = \emptyset$.& 6'. If, for all $A$, $A \cap B = A$ then $B = U$.\\
 7,7'. If $A \cup B = U$ and $A \cap B = \emptyset$, then $B = \comp{A}$.\\
@@ -98,6 +102,20 @@ X \subseteq X;\\ X \subseteq Y \wedge Y \subseteq Z \Rightarrow X \subseteq Z;\\
 12. $A \cup (A \cap B) = A$. &12'. $A \cap (A \cup B) = A$.\\
 13. $\comp{A \cup B} = \comp{A} \cap \comp{B}$& 13'. $\comp{A \cap B} = \comp{A} \cup \comp{B}$.
 \end{tabular}\\
-\underline{\textsc{Proof}}:\\
+\thm{Proof}:\\
+6. Assume $A \cup B = A$ for all $A$. Take $A = \emptyset$. Then $\emptyset \cup B = \emptyset$. Then if $x \in B$ we have $x \in \emptyset \cup B = \emptyset$ and so $B \subseteq \emptyset$. Since $\emptyset \subseteq B$ we have $B = \emptyset$.\\
+6'. Assume $A \cap B = A$ for all $A$. Take $A = U$. Then $U \cap B = U$. Then if $x \in U$ we have $x \in U \cap B$ and so $x \in B$. Therefore $U \subseteq B$. Since $B \subseteq U$ we have $B = U$.\\
+7,7'. Assume $A \cup  B = U$ and $A \cap B = \emptyset$ for sets $A$ and $B$. Take $x \in B$. Assume $x \in A$. Then $x \in A \cap B = \emptyset$. By contradiction we have $x \in \comp{A}$. Then $B \subseteq \comp{A}$. Now take $x \in \comp{A}$. Then $x \notin A$. Assume $x \notin B$. Then $x \notin A \cup B = U$. By contradiction we have $x \in B$. Therefore $\comp{A} \subseteq B$ and so $B = \comp{A}$.\\
+8,8'. Take $x \in \comp{\comp{A}}$ for a set $A$. Then $x \notin \comp{A}$ and so $x \in A$. Therefore $\comp{\comp{A}} \subseteq A$. Now take $x \in A$. Then $x \notin \comp{A}$ and so $x \in \comp{\comp{A}}$. Therefore $A \subseteq \comp{\comp{A}}$ and so $\comp{\comp{A}} = A$.\\
+9. Take $x \in \comp{\emptyset}$. Then $x \in U \cap \comp{\emptyset}$ and so $x \in U$. Then $\comp{\emptyset} \subseteq U$. Now take $x \in U$. Then $x \notin \emptyset$ and so $x \in U \cap \comp{\emptyset} = U - \emptyset = \comp{\emptyset}$. Therefore $U \subseteq \comp{\emptyset}$ and so $\comp{\emptyset} = U$.\\
+9'. Take $x \in \comp{U}$. Then $x \in U \cap \comp{U}$ so $x \in U$ and $x \notin U$. By contradiction $x \in \emptyset$ and so $\comp{U} \subseteq \emptyset$. Now take $x \in \emptyset$. Then $x \notin U$ and so $x \in \comp{U}$. Therefore $\emptyset \subseteq \comp{U}$ and so $\comp{U} = \emptyset$.\\
+10. Take $x \in A \cup A$. Then $x \in A$ or $x \in A$ and so $x \in A$. Thus $A \cup A \subseteq A$. Now take $x \in A$. Then $x \in A \cup A$ and so $A \subseteq A \cup A$. Therefore $A \cup A = A$.\\
+10'. Take $x \in A \cap A$. Then $x \in A$ and so $A \cap A \subseteq A$. Now take $x \in A$. Then $x \in A \cap A$ and so $A \subseteq A \cap A$. Therefore $A \cap A = A$.\\
+11. Take $x \in A \cup U$. Then $x \in A$ or $x \in U$. If $x \in A$ then $x \in U$ since $A \subseteq U$. Therefore $A \cup U \subseteq U$. Now take $x \in U$. Then $x \in A \cup U$ and so $U \subseteq A \cup U$. Therefore $A \cup U = U$.\\
+11'. Take $x \in A \cap \emptyset$. Then $x \in \emptyset$ and so $A \cap \emptyset \subseteq \emptyset$. Now take $x \in \emptyset$. Then $x \in A$ (ex falso quod libet). Thus $x \in A \cap \emptyset$ and so $\emptyset \subseteq A \cap \emptyset$. Therefore $A \cap \emptyset = \emptyset$.\\
+12. Take $x \in A \cup (A \cap B)$. Then $x \in A$ or $x \in A \cap B$. If $x \in A \cap B$ then $x \in A$. Therefore $A \cup (A \cap B) \subseteq A$. Now take $x \in A$. Then $x \in A \cup (A \cap B)$. Thus $A \subseteq A \cup (A \cap B)$ and so $A \cup (A \cap B) = A$.\\
+12'. Take $x \in A \cap (A \cup B)$. Then $x \in A$ and so $A \cap (A \cup B) \subseteq A$. Now take $x \in A$. Then $x \in A \cup B$ and so $x \in A \cap (A \cup B)$. Therefore $A \subseteq A \cap (A \cup B)$ and so $A \cap (A \cup B) = A$.\\
+13. Take $x \in \comp{A \cup B}$. Then $x \notin A \cup B$ and so $x \notin A$ and $x \notin B$. Then $x \in \comp{A}$ and $x \in \comp{B}$ and so $x \in \comp{A} \cap \comp{B}$. Therefore $\comp{A \cup B} \subseteq \comp{A} \cap \comp{B}$. Now take $x \in \comp{A} \cap \comp{B}$. Then $x \in \comp{A}$ and $x \in \comp{B}$ and so $x \notin A$ and $x \notin B$. Then $x \notin A \cup B$ and so $x \in \comp{A \cup B}$. Therefore $\comp{A} \cap \comp{B} \subseteq \comp{A \cup B}$ and so $\comp{A \cup B} = \comp{A} \cap \comp{B}$.\\
+13'. Take $x \in \comp{A \cap B}$. Then $x \notin A \cap B$. Then $x \notin A$ or $x \notin B$. Then $x \in \comp{A}$ or $x \in \comp{B}$ and so $x \in \comp{A} \cup \comp{B}$. Therefore $\comp{A \cap B} \subseteq \comp{A} \cup \comp{B}$. Now take $x \in \comp{A} \cup \comp{B}$. Then $x \in \comp{A}$ or $x \in \comp{B}$ and so $x \notin A$ or $x \notin B$. Then $x \notin A \cap B$ and so $x \in \comp{A \cap B}$. Therefore $\comp{A} \cup \comp{B} \subseteq \comp{A \cap B}$ and so $\comp{A \cap B} = \comp{A} \cup \comp{B}$.\\
 
 \end{document}
