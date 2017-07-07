@@ -188,4 +188,32 @@ Step II. An equation in $X$ with righthand side $\emptyset$ is equivalent to one
 Step III. The union of two sets is equal to $\emptyset$ iff each set is equal to $\emptyset$. Hence the equation in Step II is equivalent to the pair of simultaneous equations $$A \cap X = \emptyset, B \cap \comp{X} = \emptyset.$$
 Step IV. The above pair of equations, and hence the original equation, has a solution iff $B \subseteq \comp{A}$. In this event, any $X$, such that $B \subseteq X \subseteq \comp{A}$, is a solution. [See exercise 5.7]
 
+\section{Relations}
+\defn{ordered pair}: $\tuple{x, y} = \set{\set{x}, \set{x,y}}$.
+
+\thm{Theorem 6.1}: The ordered pair of $x$ and $y$ is uniquely determined by $x$ and $y$. Moreover, if $\tuple{x,y} = \tuple{u,v}$ then $x = u$ and $y = v$.
+
+\thm{Proof}:\\
+That $x$ and $y$ uniquely determine $\tuple{x,y}$ follows from our assumption that a set is uniquely determined by its members. Now assume $\tuple{x,y} = \tuple{u,v}$. \begin{enumerate}[label=(Case \Roman*)]
+\item $u=v$: Then $\tuple{u,v} = \set{\set{u}, \set{u,v}} = \set{\set{u}}$. Hence $\set{\set{x}, \set{x,y}} = \set{\set{u}} \Rightarrow \set{x} = \set{\set{x,y}} = \set{u}$ and so $x=u$ and $y=v$. 
+\item $u\neq v$: Then $\set{u} \neq \set{\set{u}, \set{u,v}}$ and $\set{x} \neq \set{\set{u}, \set{u,v}}$. Then $\set{x} \in  \set{\set{u}, \set{u,v}} \Rightarrow \set{x} = \set{u} \Rightarrow x = u$ and $\set{x,y} \in  \set{\set{u}, \set{u,v}} \Rightarrow \set{x,y} = \set{u,v}$. Then $\set{x,y} \neq \set{u}$ and so $x \neq y$ and $y \neq u$. Therefore $y = v$.
+\end{enumerate}
+
+\defn{first coordinate}: $x$ in $\tuple{x,y}$.\\
+\defn{second coordinate}: $y$ in $\tuple{x,y}$.\\
+\defn{ordered triple}: $\tuple{x,y,z} = \tuple{\tuple{x,y},z}$.\\
+\defn{ordered $n$-tuple}: $\tuple{x_1, x_2, \dots, x_n} = \tuple{\tuple{x_1, x_2, \dots, x_{n-1}}, x_n}$.\\
+\defn{binary relation}: a set of ordered pairs. Given relation $\rho$ and $\tuple{x,y} \in \rho$ we write $x\rho y$.\\
+\defn{$\rho$-related}: $x$ is $\rho$-related to $y$ iff $x\rho y$.\\
+\defn{$n$-ary relation}: a set of ordered $n$-tuples.\\
+\defn{domain}: $D_{\rho} = \set{x \mid \text{for some }y, \tuple{x,y}\in \rho}$.\\
+\defn{range}: $R_{\rho} = \set{y \mid \text{for some }x, \tuple{x,y}\in \rho}$.\\
+\defn{cartesian product}: $X \times Y = \set{\tuple{x,y} \mid x \in X \wedge y \in Y}$.\\
+\defn{relation from $X$ to $Y$}: $\rho \subseteq X \times Y$.\\
+\defn{relation in $Z$}: $\rho \subseteq Z \times Z$.\\
+\defn{universal relation in $X$}: $\rho = X \times X$.\\
+\defn{void relation in $X$}: $\rho = \emptyset$.\\
+\defn{identity relation in $X$}: $\iota_{X} = \set{\tuple{x,x} \mid x \in X}$.\\
+\defn{$\rho$-relatives of $A$}: $\rho[A]= \set{y \mid x\rho y \text{ for some } x\in A}$. Then we have $\rho(D_{\rho}) = R_{\rho}$, and, for any set $A$, $\rho[A] \subseteq R_{\rho}$.\\
+
 \end{document}
