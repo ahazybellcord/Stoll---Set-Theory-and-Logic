@@ -44,7 +44,7 @@ X \subseteq X;\\ X \subseteq Y \wedge Y \subseteq Z \Rightarrow X \subseteq Z;\\
 \defn{disjoint}: $A \cap B = \emptyset$ for sets $A$ and $B$.\\
 \defn{intersect}: $A \cap B \neq \emptyset$ for sets $A$ and $B$.\\
 \defn{disjoint collection}: for a collection of sets, each distinct pair of its member sets is disjoint.\\
-\defn{partition}: for a set $X$, a disjoint collection $\mathcal{A}$ of nonempty and distinct subsets of $X$ such that each member of $X$ is a members of some (exactly one) member of $\mathcal{A}$.\\
+\defn{partition}: for a set $X$, a disjoint collection $\mathcal{A}$ of nonempty and distinct subsets of $X$ such that each member of $X$ is a member of some (exactly one) member of $\mathcal{A}$.\\
 \defn{absolute complement} of $A$: $\comp{A} = \set{x \mid x \notin A}$, the set of all members which are not in $A$.\\
 \defn{relative complement} of $A$ with respect to $X$: $X - A = X \cap \comp{A} = \set{x \in X \mid x \notin A}$, the set of those members of $X$ which are not members of $A$.\\
 \defn{symmetric difference} of $A$ and $B$: $A + B = (A - B) \cup (B - A)$.\\
@@ -104,9 +104,9 @@ X \subseteq X;\\ X \subseteq Y \wedge Y \subseteq Z \Rightarrow X \subseteq Z;\\
 
 \underline{General commutative law for set intersection}: If $1',2',\dots,n'$ are $1,2,\dots,n$ in any order, then $$A_1 \cap A_2 \cap \dots \cap A_n = A_{1'} \cap A_{2'} \cap \dots \cap A_{n'}.$$
 
-\underline{General distributive law for set union}: $$A \cup (B_1 \cap B_2 \cap \dots \cap B_n) = (A \cup B_1) \cap (A \cup B_2) \cap \dots \cap (A \cup B_n).$$\\
+\underline{General distributive law for set union}: $$A \cup (B_1 \cap B_2 \cap \dots \cap B_n) = (A \cup B_1) \cap (A \cup B_2) \cap \dots \cap (A \cup B_n).$$
 
-\underline{General distributive law for set intersection}: $$A \cap (B_1 \cup B_2 \cup \dots \cup B_n) = (A \cap B_1) \cup (A \cap B_2) \cup \dots \cup (A \cap B_n).$$\\
+\underline{General distributive law for set intersection}: $$A \cap (B_1 \cup B_2 \cup \dots \cup B_n) = (A \cap B_1) \cup (A \cap B_2) \cup \dots \cup (A \cap B_n).$$
 
 \defn{dual}: An equation, or an expression, or a statement within the framework of the algebra of sets obtained from another by interchanging $\cup$ and $\cap$ along with $\emptyset$ and $U$.\\
 
@@ -123,7 +123,8 @@ X \subseteq X;\\ X \subseteq Y \wedge Y \subseteq Z \Rightarrow X \subseteq Z;\\
 12. $A \cup (A \cap B) = A$. &12'. $A \cap (A \cup B) = A$.\\
 13. $\comp{A \cup B} = \comp{A} \cap \comp{B}$& 13'. $\comp{A \cap B} = \comp{A} \cup \comp{B}$.
 \end{tabular}\\
-\thm{Proof}:\\
+
+\thm{Proof}:
 \begin{enumerate}
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 \setcounter{enumi}{5}
@@ -146,13 +147,13 @@ X \subseteq X;\\ X \subseteq Y \wedge Y \subseteq Z \Rightarrow X \subseteq Z;\\
 \item Take $x \in A \cup A$. Then $x \in A$ or $x \in A$ and so $x \in A$. Thus $A \cup A \subseteq A$. Now take $x \in A$. Then $x \in A \cup A$ and so $A \subseteq A \cup A$. Therefore $A \cup A = A$.
 \renewcommand{\labelenumi}{\arabic{enumi}'.}
 \setcounter{enumi}{9}
-\item Take $x \in A \cap A$. Then $x \in A$ and so $A \cap A \subseteq A$. Now take $x \in A$. Then $x \in A \cap A$ and so $A \subseteq A \cap A$. Therefore $A \cap A = A$.\\
+\item Take $x \in A \cap A$. Then $x \in A$ and so $A \cap A \subseteq A$. Now take $x \in A$. Then $x \in A \cap A$ and so $A \subseteq A \cap A$. Therefore $A \cap A = A$.
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 \setcounter{enumi}{10}
 \item Take $x \in A \cup U$. Then $x \in A$ or $x \in U$. If $x \in A$ then $x \in U$ since $A \subseteq U$. Therefore $A \cup U \subseteq U$. Now take $x \in U$. Then $x \in A \cup U$ and so $U \subseteq A \cup U$. Therefore $A \cup U = U$.
 \renewcommand{\labelenumi}{\arabic{enumi}'.}
 \setcounter{enumi}{10}
-\item Take $x \in A \cap \emptyset$. Then $x \in \emptyset$ and so $A \cap \emptyset \subseteq \emptyset$. Now take $x \in \emptyset$. Then $x \in A$ (ex falso quod libet). Thus $x \in A \cap \emptyset$ and so $\emptyset \subseteq A \cap \emptyset$. Therefore $A \cap \emptyset = \emptyset$.
+\item Take $x \in A \cap \emptyset$. Then $x \in \emptyset$ and so $A \cap \emptyset \subseteq \emptyset$. Now take $x \in \emptyset$. Then $x \in A$ (ex falso quodlibet). Thus $x \in A \cap \emptyset$ and so $\emptyset \subseteq A \cap \emptyset$. Therefore $A \cap \emptyset = \emptyset$.
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 \setcounter{enumi}{11}
 \item Take $x \in A \cup (A \cap B)$. Then $x \in A$ or $x \in A \cap B$. If $x \in A \cap B$ then $x \in A$. Therefore $A \cup (A \cap B) \subseteq A$. Now take $x \in A$. Then $x \in A \cup (A \cap B)$. Thus $A \subseteq A \cup (A \cap B)$ and so $A \cup (A \cap B) = A$.
