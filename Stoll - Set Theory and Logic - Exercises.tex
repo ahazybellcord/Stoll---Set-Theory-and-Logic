@@ -28,7 +28,7 @@
 	\solution{$\set{(x,y) \in \mathbb{R}^2 \mid y = 2x \text{ and } y = 3x}$}{The single point (0,0).}
 	\end{enumerate}}
 \solution{Prove that if $a,b,c$, and $d$ are any objects, not necessarily distinct from one another, then $\set{\set{a},\set{a,b}} = \set{\set{c},\set{c,d}}$ iff both $a = c$ and $b = d$.}
-{($\Rightarrow$) Let $\set{\set{a},\set{a,b}} = \set{\set{c},\set{c,d}}$. Then $\set{\set{a},\set{a,b}} \subseteq \set{\set{c},\set{c,d}}$ and so in particular $\set{a} \in \set{\set{c},\set{c,d}}$. Suppose $c = d$. Then $\set{\set{c},\set{c,d}} = \set{\set{c},\set{c,c}} = \set{\set{c},\set{c}} = \set{\set{c}}$ and therefore $\set{a} \in \set{\set{c}} \Rightarrow \set{a} = \set{c} \Rightarrow \set{a} \subseteq \set{c} \Rightarrow a \in \set{c} \Rightarrow a = c$. Then since $\set{\set{a},\set{a,b}} \subseteq \set{\set{c},\set{c,d}} = \set{\set{c}} = \set{\set{a}}$ we also have that $\set{a,b} \in \set{\set{a}} \Rightarrow \set{a,b} = \set{a} \Rightarrow \set{a,b} \subseteq \set{a} \Rightarrow b \in \set{a} \Rightarrow a = b$. Now suppose $c \neq d$. Since $\set{a} \in \set{\set{c},\set{c,d}} \Rightarrow \set{a} = \set{c} \Rightarrow a = c$. By $\set{\set{a},\set{a,b}} \subseteq \set{\set{c},\set{c,d}}$ we also have that $\set{a,b} = \set{c,b} \in \set{\set{c},\set{c,d}}$ and so $\set{c,b} = \set{c,d} \Rightarrow b = d$.\\ ($\Leftarrow$) Let $a = c$ and $b = d$. Then $\set{\set{a},\set{a,b}} = \set{\set{c},\set{c,d}}$. $\qed$}
+{($\then$) Let $\set{\set{a},\set{a,b}} = \set{\set{c},\set{c,d}}$. Then $\set{\set{a},\set{a,b}} \subseteq \set{\set{c},\set{c,d}}$ and so in particular $\set{a} \in \set{\set{c},\set{c,d}}$. Suppose $c = d$. Then $\set{\set{c},\set{c,d}} = \set{\set{c},\set{c,c}} = \set{\set{c},\set{c}} = \set{\set{c}}$ and therefore $\set{a} \in \set{\set{c}} \then \set{a} = \set{c} \then \set{a} \subseteq \set{c} \then a \in \set{c} \then a = c$. Then since $\set{\set{a},\set{a,b}} \subseteq \set{\set{c},\set{c,d}} = \set{\set{c}} = \set{\set{a}}$ we also have that $\set{a,b} \in \set{\set{a}} \then \set{a,b} = \set{a} \then \set{a,b} \subseteq \set{a} \then b \in \set{a} \then a = b$. Now suppose $c \neq d$. Since $\set{a} \in \set{\set{c},\set{c,d}} \then \set{a} = \set{c} \then a = c$. By $\set{\set{a},\set{a,b}} \subseteq \set{\set{c},\set{c,d}}$ we also have that $\set{a,b} = \set{c,b} \in \set{\set{c},\set{c,d}}$ and so $\set{c,b} = \set{c,d} \then b = d$.\\ ($\Leftarrow$) Let $a = c$ and $b = d$. Then $\set{\set{a},\set{a,b}} = \set{\set{c},\set{c,d}}$. $\qed$}
 \end{enumerate}
 
 \hrulefill
@@ -71,9 +71,9 @@
 	{True: Suppose $A \subset B$ and $B \subset C$. Then for any $a \in A$ we have that $a \in B$. Since $a \in B$ we have that $a \in C$. Therefore $A \subseteq C$. Since $B \subset C$ we have that there is some $c \in C$ such that $c \notin B$. Since $A \subset B$ we have that $c \notin A$. Therefore $A \neq C$ and so $A \subset C$.}
 	\end{enumerate}
 \solution{Show that for every set $A$, $A \subseteq \emptyset$ iff $A = \emptyset$.}
-{($\Rightarrow$) Suppose $A \subseteq \emptyset$. Then for any $a \in A$ we have that $a \in \emptyset$. But since the empty set has no members, no such $a$ can exist. Therefore $A$ has no members and so $A = \emptyset$. ($\Leftarrow$) Suppose $A = \emptyset$. Then $A$ has no members and so, certainly, for all $a \in A$ we have that $a \in B$, for any set $B$. Therefore $A \subseteq B$. Letting $B = \emptyset$, we conclude that $A \subseteq \emptyset$. $\qed$}
+{($\then$) Suppose $A \subseteq \emptyset$. Then for any $a \in A$ we have that $a \in \emptyset$. But since the empty set has no members, no such $a$ can exist. Therefore $A$ has no members and so $A = \emptyset$. ($\Leftarrow$) Suppose $A = \emptyset$. Then $A$ has no members and so, certainly, for all $a \in A$ we have that $a \in B$, for any set $B$. Therefore $A \subseteq B$. Letting $B = \emptyset$, we conclude that $A \subseteq \emptyset$. $\qed$}
 \solution{Let $A_1,A_2,\dots,A_n$ be $n$ sets. Show that $$A_1 \subseteq A_2 \subseteq \dots \subseteq A_n \subseteq A_1 \text{ iff } A_1 = A_2 = \dots = A_n.$$}
-{($\Leftarrow$) Suppose sets $A_1 = A_2 = \dots = A_n$. Then clearly $A_i \subseteq A_{i+1}$ for all $1 \leq i \leq n - 1$ and $A_n \subseteq A_1$. Therefore $A_1 \subseteq A_2 \subseteq \dots \subseteq A_n \subseteq A_1$.\\ ($\Rightarrow$) Suppose $A_1 \subseteq A_2 \subseteq \dots \subseteq A_n \subseteq A_1$. Then for any $a \in A_1$ we have that $a \in A_2$, $a \in A_3$, $\dots$, $a \in A_n$ and so $A_1 \subseteq A_n$. But since $A_n \subseteq A_1$ we must have that $A_1 = A_n$. Therefore $A_1 \subseteq A_2 \subseteq \dots \subseteq A_{n-1} \subseteq A_1$. Repeating this argument $n - 2$ times for $j = n - 1, n - 2, \dots, 2$ we find that for any $a \in A_1$ we have that $a \in A_j$ and therefore $A_1 \subseteq A_j$. But we also have that $A_j \subseteq A_1$ and so $A_1 = A_j$. Finally, we conclude that $A_1 = A_2 = \dots = A_n$. $\qed$}
+{($\Leftarrow$) Suppose sets $A_1 = A_2 = \dots = A_n$. Then clearly $A_i \subseteq A_{i+1}$ for all $1 \leq i \leq n - 1$ and $A_n \subseteq A_1$. Therefore $A_1 \subseteq A_2 \subseteq \dots \subseteq A_n \subseteq A_1$.\\ ($\then$) Suppose $A_1 \subseteq A_2 \subseteq \dots \subseteq A_n \subseteq A_1$. Then for any $a \in A_1$ we have that $a \in A_2$, $a \in A_3$, $\dots$, $a \in A_n$ and so $A_1 \subseteq A_n$. But since $A_n \subseteq A_1$ we must have that $A_1 = A_n$. Therefore $A_1 \subseteq A_2 \subseteq \dots \subseteq A_{n-1} \subseteq A_1$. Repeating this argument $n - 2$ times for $j = n - 1, n - 2, \dots, 2$ we find that for any $a \in A_1$ we have that $a \in A_j$ and therefore $A_1 \subseteq A_j$. But we also have that $A_j \subseteq A_1$ and so $A_1 = A_j$. Finally, we conclude that $A_1 = A_2 = \dots = A_n$. $\qed$}
 \solution{Give several examples of a set $X$ such that each element of $X$ is a subset of $X$.}
 {$X_1 = \emptyset$. $X_2 = \set{\emptyset}$. $X_3 = ?$}
 \solution{List the members of $\mathcal{P}(A)$ if $A = \set{\set{1,2}, \set{3}, 1}$.}
@@ -118,7 +118,7 @@ C &= \set{x \in \mathbb{Z^+} \mid \text{for some integer } y,\, x = 3y}.
 	{In this example:
 	\begin{itemize}
 		\item $A \cap (B \cup C) = A \cap C$
-		\item $A \cap B = \emptyset \Rightarrow (A \cap B) \cup (A \cap C) = A \cap C$
+		\item $A \cap B = \emptyset \then (A \cap B) \cup (A \cap C) = A \cap C$
 	\end{itemize}
 	A general proof:\\
 	Assume $x \in A \cap (B \cup C)$. Then by definition of set intersection, $x \in A$ and $x \in B \cup C$. By the definition of set union, $x \in B$ or $x \in C$. If $x \in B$ then we have that $x \in A \cap B$ since $x \in A$. Otherwise, if $x \in C$ then we have that $x \in A \cap C$ since $x \in A$. In both cases we know that $x \in (A \cap B) \cup (A \cap C)$ since both $A \cap B \subseteq (A \cap B) \cup (A \cap C)$ and $A \cap C \subseteq (A \cap B) \cup (A \cap C)$. Therefore $A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C)$. Now assume $x \in (A \cap B) \cup (A \cap C)$. By the definition of set union, $x \in A \cap B$ or $x \in A \cap C$. If $x \in A \cap B$ then by the definition of set intersection, we have that $x \in A$ and $x \in B$. Since $B \subseteq B \cup C$ we know that $x \in B \cup C$. Thus $x \in A \cap (B \cup C)$. Otherwise if $x \in A \cap C$ then by the definition of set intersection, we have that $x \in A$ and $x \in C$. Since $C \subseteq B \cup C$ we know that $x \in B \cup C$. Thus $x \in A \cap (B \cup C)$. Therefore $(A \cap B) \cup (A \cap C) \subseteq  A \cap (B \cup C)$. Therefore $(A \cap B) \cup (A \cap C) =  A \cap (B \cup C)$. $\qed$}
@@ -180,12 +180,12 @@ C &= \set{x \in \mathbb{Z^+} \mid \text{for some integer } y,\, x = 3y}.
 		\end{itemize}
 		\item Assume $A \subseteq \comp{B}$.
 		\begin{itemize}
-			\item Take $x \in A$. Then since $A \subseteq \comp{B}$ we have $x \notin B$. Now take $x \in B$. Assume $x \in A$. But then since $A \subseteq \comp{B}$ we have $x \notin B$. By contradiction we must have that $x \notin A$. Thus $x \in A \Rightarrow x \notin B$ and $x \in B \Rightarrow x \notin A$ and so $A \cap B = \emptyset$.
+			\item Take $x \in A$. Then since $A \subseteq \comp{B}$ we have $x \notin B$. Now take $x \in B$. Assume $x \in A$. But then since $A \subseteq \comp{B}$ we have $x \notin B$. By contradiction we must have that $x \notin A$. Thus $x \in A \then x \notin B$ and $x \in B \then x \notin A$ and so $A \cap B = \emptyset$.
 			\item Take $x \in B$. Assume $x \in A$. Then since $A \subseteq \comp{B}$ we have that $x \notin B$. Then by contradiction, we must have $x \notin A$ and so $B \subseteq \comp{A}$.
 		\end{itemize}
 		\item Assume $B \subseteq \comp{A}$.
 		\begin{itemize}
-			\item Take $x \in B$. Then since $B \subseteq \comp{A}$ we have $x \notin A$. Now take $x \in A$ and assume $x \in B$. But since $B \subseteq \comp{A}$ we have $x \notin A$. Then by contradiction, we must have that $x \notin B$. Thus $x \in A \Rightarrow x \notin B$ and $x \in B \Rightarrow x \notin A$ and so $A \cap B = \emptyset$.
+			\item Take $x \in B$. Then since $B \subseteq \comp{A}$ we have $x \notin A$. Now take $x \in A$ and assume $x \in B$. But since $B \subseteq \comp{A}$ we have $x \notin A$. Then by contradiction, we must have that $x \notin B$. Thus $x \in A \then x \notin B$ and $x \in B \then x \notin A$ and so $A \cap B = \emptyset$.
 			\item Take $x \in A$. Assume $x \in B$. Then since $B \subseteq \comp{A}$ we have $x \notin A$. Then by contradiction we must have that $x \notin B$. Therefore $A \subseteq \comp{B}$.
 		\end{itemize}
 	  \end{enumerate}
@@ -208,7 +208,7 @@ C &= \set{x \in \mathbb{Z^+} \mid \text{for some integer } y,\, x = 3y}.
 	\end{enumerate}
 \end{enumerate}}
 \solution{Prove that for all sets $A,B$, and $C$, $$(A \cap B) \cup C = A \cap (B \cup C) \text{ iff } C \subseteq A.$$}
-{($\Rightarrow$) Assume $(A \cap B) \cup C = A \cap (B \cup C)$. Let $x \in C$. Then $x \in (A \cap B) \cup C$. Since $(A \cap B) \cup C = A \cap (B \cup C)$ we have that $x \in A \cap (B \cup C)$ and thus $x \in A$. Therefore $C \subseteq A$.\\ ($\Leftarrow$) Assume $C \subseteq A$. Let $x \in (A \cap B) \cup C$. Then $x \in A \cap B$ or $x \in C$. Assume $x \in A \cap B$. Then $x \in A$ and $x \in B$. Since $x \in B$ then $x \in B \cup C$. Since $x \in A$ and $x \in B \cup C$ we have that $x \in A \cap (B \cup C)$. Now assume $x \in C$. Then $x \in B \cup C$. Since $C \subseteq A$ we also have that $x \in A$. Thus $x \in A \cap (B \cup C)$. Therefore $(A \cap B) \cup C \subseteq A \cap (B \cup C)$. Now let $x \in A \cap (B \cup C)$. Then $x \in A$ and $x \in B \cup C$. Then $x \in B$ or $x \in C$. Assume $x \in B$. Then since $x \in A$ and $x \in B$ we have that $x \in A \cap B$. Therefore $x \in (A \cap B) \cup C$. Now assume $x \in C$. Then $x \in (A \cap B) \cup C$. Therefore $A \cap (B \cup C) \subseteq (A \cap B) \cup C$ and so we can conclude that $(A \cap B) \cup C = A \cap (B \cup C)$. $\qed$}
+{($\then$) Assume $(A \cap B) \cup C = A \cap (B \cup C)$. Let $x \in C$. Then $x \in (A \cap B) \cup C$. Since $(A \cap B) \cup C = A \cap (B \cup C)$ we have that $x \in A \cap (B \cup C)$ and thus $x \in A$. Therefore $C \subseteq A$.\\ ($\Leftarrow$) Assume $C \subseteq A$. Let $x \in (A \cap B) \cup C$. Then $x \in A \cap B$ or $x \in C$. Assume $x \in A \cap B$. Then $x \in A$ and $x \in B$. Since $x \in B$ then $x \in B \cup C$. Since $x \in A$ and $x \in B \cup C$ we have that $x \in A \cap (B \cup C)$. Now assume $x \in C$. Then $x \in B \cup C$. Since $C \subseteq A$ we also have that $x \in A$. Thus $x \in A \cap (B \cup C)$. Therefore $(A \cap B) \cup C \subseteq A \cap (B \cup C)$. Now let $x \in A \cap (B \cup C)$. Then $x \in A$ and $x \in B \cup C$. Then $x \in B$ or $x \in C$. Assume $x \in B$. Then since $x \in A$ and $x \in B$ we have that $x \in A \cap B$. Therefore $x \in (A \cap B) \cup C$. Now assume $x \in C$. Then $x \in (A \cap B) \cup C$. Therefore $A \cap (B \cup C) \subseteq (A \cap B) \cup C$ and so we can conclude that $(A \cap B) \cup C = A \cap (B \cup C)$. $\qed$}
 \solution{Prove that for all sets $A,B$, and $C$, $$(A - B) - C = (A - C) - (B - C).$$}
 {Let $x \in (A - B) - C$. Then $x \in A - B$ and $x \notin C$. Since $x \in A - B$ we have that $x \in A$ and $x \notin B$. Then since $x \in A$ and $x \notin C$ we have that $x \in A - C$. Since $x \notin B$ we have that $x \notin B - C$. Then since $x \in A - C$ and $x \notin B - C$ we have that $x \in (A - C) - (B - C)$. Now let $x \in (A - C) - (B - C)$. Then $x \in A - C$ and $x \notin B - C$. Then since $x \in A - C$ we have that $x \in A$ and $x \notin C$. Since $x \notin B - C$ we have that either $x \notin B$ or $x \in C$. But $x \in C$ is a contradiction because $x \notin C$. Therefore $x \notin B$. Then since $x \in A$ and $x \notin B$ we have that $x \in A - B$ and since $x \notin C$ we have that $x \in (A - B) - C$. Therefore $(A - C) - (B - C) \subseteq (A - B) - C$ and thus $(A - B) - C = (A - C) - (B - C)$. $\qed$}
 \item{\begin{enumerate}
@@ -378,7 +378,7 @@ $\mathcal{A}$ is a partition of $S_n$ as long as all of $A_i$ for $1\leq i \leq 
 {Let $A = B = \emptyset$. Then $A \cup B = \emptyset \cup \emptyset = \emptyset$. Now let $A \cup B = \emptyset$. Then $A = \emptyset$ and $B = \emptyset$.}
 
 \solution{The equation $(A \cap X) \cup (B \cap \comp{X}) = \emptyset$ has a solution iff $B \subseteq \comp{A}$, and then any $X$ such that $B \subseteq X \subseteq \comp{A}$ is a solution.}
-{($\Rightarrow$) Suppose there exists a set $X$ for which $(A \cap X) \cup (B \cap \comp{X}) = \emptyset$. Now consider some $x \in B$ and assume $x \in A$. Then if $x \in X$ we have $x \in A \cap X \subseteq (A \cap X) \cup (B \cap \comp{X}) = \emptyset$, a contradiction. Otherwise, $x \in \comp{X}$ and so $x \in B \cap \comp{X} \subseteq (A \cap X) \cup (B \cap \comp{X}) = \emptyset$, another contradiction. Therefore, $x \notin A$ and so $B \subseteq \comp{A}$.\\ ($\Leftarrow$) Now assuming $B \subseteq \comp{A}$ consider a set $X$ such that $B \subseteq X \subseteq \comp{A}$. Then for any $x \in X$, $x \in \comp{A} \Rightarrow x \notin A \Rightarrow X \cap A = \emptyset$. Also, for any $x \in B$, $x \in X$. Therefore $x \notin \comp{X}$ and so $B \cap \comp{X} = \emptyset$. Therefore $(A \cap X) \cup (B \cap \comp{X}) = \emptyset$.}
+{($\then$) Suppose there exists a set $X$ for which $(A \cap X) \cup (B \cap \comp{X}) = \emptyset$. Now consider some $x \in B$ and assume $x \in A$. Then if $x \in X$ we have $x \in A \cap X \subseteq (A \cap X) \cup (B \cap \comp{X}) = \emptyset$, a contradiction. Otherwise, $x \in \comp{X}$ and so $x \in B \cap \comp{X} \subseteq (A \cap X) \cup (B \cap \comp{X}) = \emptyset$, another contradiction. Therefore, $x \notin A$ and so $B \subseteq \comp{A}$.\\ ($\Leftarrow$) Now assuming $B \subseteq \comp{A}$ consider a set $X$ such that $B \subseteq X \subseteq \comp{A}$. Then for any $x \in X$, $x \in \comp{A} \then x \notin A \then X \cap A = \emptyset$. Also, for any $x \in B$, $x \in X$. Therefore $x \notin \comp{X}$ and so $B \cap \comp{X} = \emptyset$. Therefore $(A \cap X) \cup (B \cap \comp{X}) = \emptyset$.}
 
 \solution{An alternative form for solutions of the equation in part (d) is $X = (B \cup T) \cap \comp{A}$, where $T$ is an arbitrary set.}
 {Let $X = (B \cup T) \cap \comp{A}$ for an arbitrary set $T$. Then we have $\comp{X} = (\comp{B} \cap \comp{T}) \cup A$, $A \cap X = A \cap [(B \cup T) \cap \comp{A}] = A \cap \comp{A} \cap (B \cup T) = \emptyset \cap (B \cup T) = \emptyset$, and $B \cap \comp{X} = B \cap [(\comp{B} \cap \comp{T}) \cup A] = (B \cap \comp{B} \cap \comp{T}) \cup (B \cap A) = \emptyset \cap \emptyset = \emptyset$. Therefore $(A \cap X) \cup (B \cap \comp{X}) = \emptyset$ and so $X = (B \cup T) \cap \comp{A}$ is alternative form for solutions of the equation in part (d).}
@@ -397,45 +397,159 @@ $\mathcal{A}$ is a partition of $S_n$ as long as all of $A_i$ for $1\leq i \leq 
 \end{enumerate}
 
 \solution{Using the results in Exercises 5.7 and 5.8, prove that the equation $$(A \cap X) \cup (B \cap \comp{X}) = (C \cap X) \cup (D \cup \comp{X})$$ has a solution iff $B + D \subseteq \comp{A + C}$. In this event determine all solutions.}
-{...}
+{Define $\alpha = A \cap X, \beta = B \cap \comp{X}, \gamma = C \cap X$ and $\delta = D \cap \comp{X}$. By exercise 5.7a we have $\alpha \cup \beta = \gamma \cup \delta \Leftrightarrow \alpha \cup \beta + \gamma \cup \delta = \emptyset \then \alpha \cup \beta + \gamma \cup \delta = [(\alpha \cup \beta) - (\gamma \cup \delta)] \cup [(\gamma \cup \delta) - (\alpha \cup \beta)] = \emptyset$. By 5.7c we have $[(\alpha \cup \beta) - (\gamma \cup \delta)] = [(\gamma \cup \delta) - (\alpha \cup \beta)] = \emptyset$. Take $x \in B + D$ and assume $x \in A + C$.\\(I) $x \in B \land x \in A \then x \in \alpha \land x \in \beta \then x \in \alpha \cup \beta. x \notin C \land x \notin D \then x \notin \gamma \land x \notin \delta \then x \notin \gamma \cup \delta \then (\alpha \cup \beta) - (\gamma \cup \delta) \neq \emptyset$.\\
+(I) $x \in B \land x \in C \then$ (i) $x \in X \then x \notin \alpha \land x \notin \beta \then x \notin \alpha \cup \beta. x \in C \land x \in X \then x \in \gamma \then x \in \gamma \cup \delta \then (\alpha \cup \beta) - (\gamma \cup \delta) \neq \emptyset$.\\(III) similar to (II). (IV) similar to (I). Therefore $B + D \subseteq \comp{A+C}$.}
+\end{enumerate}
 
 \hrulefill
 
+\renewcommand{\labelenumi}{1.6.\arabic{enumi}}
+\begin{enumerate}
+
+\solution{Show that if $\tuple{x,y,z} = \tuple{u,v,w}$ then $x=u, y=v, z=w$.}
+{By definition of ordered triple, $\tuple{x,y,z} = \tuple{\tuple{x,y},z} = \tuple{\tuple{u,v},w}$. Then $z=w$ and $\tuple{x,y} = \tuple{u,v}$. Then from theorem 6.1, we have $x=u$ and $y=v$.}
+\solution{Write the members of $\set{1,2} \times \set{2,3,4}$. What are the domain and range of the relation? What is its graph?}
+{$\rho = \set{1,2} \times \set{2,3,4} = \set{\tuple{1,2}, \tuple{1,3}, \tuple{1,4}, \tuple{2,2}, \tuple{2,3}, \tuple{2,4}}\\D_{\rho} = \set{1,2} \land R_{\rho} = \set{2,3,4}$}
+\item State the domain and range of each of the following relations then draw its graph.
+	\begin{enumerate}
+	\solution{$\set{\tuple{x,y} \in \mathbb{R}\times\mathbb{R} \mid x^2 + 4y^2 = 1}$}{$D = \set{x\in \mathbb{R} \mid |x| \leq 1} \land R = \set{y \in \mathbb{R} \mid |y| \leq \frac{1}{2}}$}
+	\solution{$\set{\tuple{x,y} \in \mathbb{R}\times\mathbb{R} \mid x^2 = y^2}$}{$D = R = \mathbb{R}$.}
+	\solution{$\set{\tuple{x,y} \in \mathbb{R}\times\mathbb{R} \mid |x| + 2|y| = 1}$}{...}
+	\solution{$\set{\tuple{x,y} \in \mathbb{R}\times\mathbb{R} \mid x^2 + y^2 < 1 \land x > 0}$}{$D = \set{x\in\mathbb{R} \mid 0 < x < 1} \land R = \set{y\in\mathbb{R} \mid |y| < 1}$}
+	\solution{$\set{\tuple{x,y} \in \mathbb{R}\times\mathbb{R} \mid y \geq 0 \land y \leq x \land x + y \leq 1}$}
+	{$D = \set{x\in\mathbb{R} \mid 0 \leq x \leq 1} \land R = \set{y\in\mathbb{R} \mid 0 \leq y \leq \frac{1}{2}}.$}
+	\end{enumerate}
+	
+\solution{Write the relation in Exercise 6.3(c) as the union of four relations and that in Exercise 6.3(e) as the intersection of three relations.}
+{$\rho_{6.3c} = \set{\tuple{x,y}\in\mathbb{R}\times\mathbb{R} \mid y = \frac{1}{2}(1+x)} \cup \set{\tuple{x,y}\in\mathbb{R}\times\mathbb{R} \mid y = \frac{1}{2}(1-x)} \cup \set{\tuple{x,y}\in\mathbb{R}\times\mathbb{R} \mid y = \frac{1}{2}(-1+x)} \cup \set{\tuple{x,y}\in\mathbb{R}\times\mathbb{R} \mid y = \frac{1}{2}(-1-x)}$.\\ $\rho_{6.3e} = \set{\tuple{x,y}\in\mathbb{R}\times\mathbb{R} \mid y \geq 0} \cap \set{\tuple{x,y}\in\mathbb{R}\times\mathbb{R} \mid y \leq x} \cap \set{\tuple{x,y}\in\mathbb{R}\times\mathbb{R} \mid x + y \leq 1}$.}
+
+\solution{The formation of the cartesian product of two sets is a binary operation for sets. Show by examples that this operation is neither commutative nor associative.}
+{Define sets $A = \set{1}, B = \set{2}, C = \set{3}$. Then $A \times B = \set{\tuple{1,2}}$ while $B \times A = \set{\tuple{2,1}}$. Therefore the cartesian product is not commutative. Turning to associativity, $(A \times B) \times C = \set{\tuple{1,2}} \times \set{3} = \set{\tuple{\tuple{1,2},3}}$ but $A \times (B \times C) = \set{1} \times \set{\tuple{2,3}} = \set{\tuple{1, \tuple{2,3}}}$. Therefore the cartesian product is not associative.}
+
+\solution{Let $\beta$ be the relation ``is a brother of'', and let $\sigma$ be the relation ``is a sister of''. Describe $\beta \cup \sigma, \beta \cap \sigma,$ and $\beta - \sigma$.}{$\beta \cup \sigma$ corresponds to ``is a brother or a sister of'', namely every pair of siblings. $\beta \cap \sigma = \emptyset$ since someone who is a brother cannot be a sister and vice versa. Because of this we have $\beta - \sigma = \beta$.}
+
+\solution{Let $\beta$ and $\sigma$ have the same meaning as in Exercise 6.6. Let $A$ be the set of students now in the reader's school. What is $\beta[A]$? What is $(\beta \cup \sigma)[A]$?}
+{$\beta[A]$ is the set of all the students' brothers. $(\beta \cup \sigma)[A]$ is the set of all the students' siblings.}
+
+\solution{Prove that if $A, B, C$, and $D$ are sets, then $(A \cap B) \times (C \cap D) = (A \times C) \cap (B \times D)$. Deduce that the cartesian multiplication of sets distributes over the operation of intersection, that is, that $(A \cap B) \times C = (A \times C) \cap (B \times C)$ and $A \times (B \cap C) = (A \times B) \cap (A \times C)$ for all $A, B$, and $C$.}
+{Let $A,B,C,D$ be arbitrary sets. Then $(A \cap B) \times (C \cap D) = \set{\tuple{x,y} \mid x\in A \cap B \land y \in C \cap D} = \set{\tuple{x,y} \mid x\in A \land x\in B \land y\in C \land y\in D} = \set{\tuple{x,y} \mid x\in A \land y \in C} \cap \set{\tuple{x,y} \mid x\in B \land y \in D} = (A \times C) \cap (B \times D)$. Then as a direct corollary, we have that the cartesian product distributes over set intersection since $(A \cap B) \times C = (A \cap B) \times (C \cap C) = (A \times C) \cap (B \times C)$ and $A \cap (B \times C) = (A \times A) \cap (B \times C) = (A \times B) \cap (A \times C)$.}
+
+\solution{Exhibit four sets $A,B,C$, and $D$ for which $(A \cup B) \times (C \cup D) \neq (A \times C) \cup (B \times D)$.}
+{Define sets $A = C = \set{0}$ and $B = D = \set{1}$. Then $(A \cup B) \times (C \cup D) = \set{0,1} \times \set{0,1} = \set{\tuple{0,0},\tuple{0,1},\tuple{1,0},\tuple{1,1}}$ but $(A \times C) \cup (B \times D) = \set{\tuple{0,0}} \cup \set{\tuple{1,1}} = \set{\tuple{0,0}, \tuple{1,1}}$ and so $(A \cup B) \times (C \cup D) \neq (A \times C) \cup (B \times D)$. }
+
+\solution{In spite of the result in the preceding exercise, cartesian multiplication distributes over the operation of union. Prove this.}
+{$A \times (B \cup C) = \set{\tuple{a,u} \mid a\in A \land u\in B\cup C} = \set{\tuple{a,u} \mid a\in A \land (u\in B \lor u\in C)} = \set{\tuple{a,b} \mid a\in A \land b\in B} \cup \set{\tuple{a,c} \mid a\in A \land c\in C} = (A \times B) \cup (A \times C)$.\\ $(A \cup B) \times C = \set{\tuple{u,c} \mid u\in A\cup B \land c\in C} = \set{\tuple{u,c} \mid (u\in A \lor u\in B) \land c\in C} = \set{\tuple{a,c} \mid (a\in A \land c\in C} \cup \set{\tuple{b,c} \mid (b\in B \land c\in C} = (A \times C) \cup (B \times C)$.}
+
+\solution{Investigate whether union and intersection distribute over cartesian multiplication.}
+{Set union fails to distribute over cartesian multiplication. Take sets $A = B = C = \set{0}$. Then $A \cup (B \times C) = \set{0} \cup \set{\tuple{0,0}} = \set{0, \tuple{0,0}}$ but $(A \cup B) \times (A \cup C) = \set{0} \times \set{0} = \set{\tuple{0,0}}$ and therefore $A \cup (B \times C) \neq (A \cup B) \times (A \cup C)$. A similar derivation will show that $(A \times B) \cup C \neq (A \cup C) \times (B \cup C)$. Set intersection also fails to distribute over cartesian multiplication. We have $A \cap (B \times C) = \set{0} \cap \set{\tuple{0,0}} = \emptyset$ but $(A \cap B) \times (A \cap C) = \set{0} \times \set{0} = \set{\tuple{0,0}}$ and therefore $A \cap (B \times C) \neq (A \cap B) \times (A \cap C)$.}
+
+\solution{Prove that if $A$, $B$, and $C$ are sets such that $A \neq \emptyset$, $B \neq \emptyset$, and $(A \times B) \cup (B \times A) = C \times C$, then $A = B = C$.}
+{Let $A, B$, and $C$ be sets such that $A \neq \emptyset$, $B \neq \emptyset$, and $(A \times B) \cup (B \times A) = C \times C$. Then $(A \times B) \cup (B \times A) = \set{\tuple{a,b} \mid a\in A \land b\in B} \cup \set{\tuple{b,a} \mid a\in A \land b\in B} = \set{\tuple{a,b} \mid (a\in A \land b\in B) \lor (a\in B \land b\in A)} = \set{\tuple{c,c} \mid c\in C} \then [x \in C \then (x\in A \land x\in B)] \land [(x\in A \lor x\in B) \then x \in C] \then C \subseteq A \land C \subseteq B \land A \subseteq C \land B \subseteq C \then A = B = C$.}
+\end{enumerate}
+
+\hrulefill
+
+\renewcommand{\labelenumi}{1.7.\arabic{enumi}}
+\begin{enumerate}
+\solution{If $\rho$ is a relation in $\mathbb{R}^+$, then its graph is a set of points in the first quadrant of a coordinate plane. What is the characteristic feature of such a graph if (a) $\rho$ is reflexive, (b) $\rho$ is symmetric, (c) $\rho$ is transitive?}
+{(a) $\rho$ contains all points for which $y=x$ (b)  all points either exist on the line $y=x$ or have a complementary point reflected about $y=x$ (c) how to describe??...}
+
+\solution{Using the results of Exercise 7.1, try to formulate a compact characterization of the graph of an equivalence relation on $\mathbb{R}^+$.}
+{...}
+
+\solution{The collection of sets $\set{\set{1,3,4},\set{2,7},\set{5,6}}$ is a partition of $\set{1,2,3,4,5,6,7}$. Draw the graph of the accompanying equivalence relation.}
+{...}
+
+\solution{Let $\rho$ and $\sigma$ be equivalence relations. Prove that $\rho \cap \sigma$ is an equivalence relation.}
+{Let $\rho$ and $\sigma$ be equivalence relations. For all $\tuple{x,y}\in \rho \cap \sigma$ we have $\tuple{x,y}\in\rho$ and $\tuple{x,y}\in\sigma$. Since $\rho$ and $\sigma$ are reflexive, we have $\tuple{x,x}\in\rho$ and $\tuple{x,x}\in\sigma$ and so $\tuple{x,x}\in\rho\cap\sigma$ hence $\rho \cap \sigma$ is reflexive. Since $\rho$ and $\sigma$ are symmetric, we have $\tuple{y,x}\in\rho$ and $\tuple{y,x}\in\sigma$ and therefore $\tuple{y,x}\in\rho\cap\sigma$ hence $\rho \cap \sigma$ is symmetric. For all $\tuple{x,y},\tuple{y,z}\in \rho \cap \sigma$ we have $\tuple{x,y},\tuple{y,z}\in\rho$ and $\tuple{x,y},\tuple{y,z}\in\sigma$ since $\rho$ and $\sigma$ are transitive we have $\tuple{x,z}\in\rho$ and $\tuple{x,z}\in\sigma$ and therefore $\tuple{x,z}\in\rho \cap \sigma$ and so $\rho \cap \sigma$ is transitive. Therefore $\rho \cap \sigma$ is an equivalence relation.}
+
+\solution{Let $\rho$ be an equivalence relation on $X$ and let $Y$ be a set. Show that $\rho \cap (Y \times Y)$ is an equivalence relation on $X \cap Y$.}
+{Take any $z\in X\cap Y$. Then $z\in X$ and so $x\in D_{\rho}$. Since $\rho$ is an equivalence relation, we have $\tuple{z,z}\in\rho$. Furthermore, $z\in Y$ and so $\tuple{z,z}\in Y\times Y$. Therefore $\tuple{z,z}\in\rho \cap (Y \times Y)$ and so $\rho \cap (Y \times Y)$ is reflexive. Take any $\tuple{a,b}\in\rho \cap (Y \times Y)$. Then $\tuple{a,b}\in\rho$ and since $\rho$ is symmetric, we also have $\tuple{b,a}\in\rho$. Furthermore, since $\tuple{a,b}\in Y\times Y$ we have $a,b\in Y$ and thus $\tuple{b,a}\in Y\times\rho' Y$. Therefore $\tuple{b,a}\in\rho \cap (Y \times Y)$ and so $\rho \cap (Y \times Y)$ is symmetric. Now take any $\tuple{a,b},\tuple{b,c}\in\rho \cap (Y \times Y)$. Then $\tuple{a,b},\tuple{b,c} \in \rho$ and since $\rho$ is transitive, we have $\tuple{a,c}\in\rho$. Furthermore, since $\tuple{a,b},\tuple{b,c}\in Y\times Y$ we have $a,b,c\in Y$ and so $\tuple{c,a}\in Y\times Y$. Therefore $\tuple{c,a}\in\rho \cap (Y \times Y)$ and so $\rho \cap (Y \times Y)$ is an equivalence relation.}
+
+\item Give an example of these relations.
+\begin{enumerate}
+	\solution{A relation which is reflexive and symmetric but not transitive.}
+	{$\rho = \set{\tuple{a,b} \mid \gcd{a,b} > 1}$}
+	\solution{A relation which is reflexive and transitive but not symmetric.}
+	{$\rho = \set{\tuple{a,b} \mid a \leq b}$}
+	\solution{A relation which is symmetric and transitive but not reflexive in some set.}
+	{$\rho = \set{\tuple{a,b} \mid a \text{ is a sibling of } b}$}
+\end{enumerate}
+
+\solution{Complete the proof of Theorem 7.1}{See the Notes for a full proof.}
+
+\solution{Each equivalence relation on a set $X$ defines a partition of $X$ according to Theorem 7.1. What equivalence yields the finest partition? the coarsest partition?}{The equivalence which yields the finest partition is that of identity: $\rho = \set{\tuple{x,y} \mid x = y}$. There are $|X|$ equivalence classes in this case. The equivalence which yields the coarsest partition is $\rho = \set{\tuple{x,y} \mid x,y\in X}$ which determines a single equivalence class of size $|X|$.}
+
+\solution{Complete the proof of Theorem 7.2}{See the Notes for a full proof.}
+
+\item Let $\rho$ be a relation which is reflexive and transitive in the set $A$. For $a,b\in A$, define $a\sim b$ iff $a\rho b$ and $b\rho a$.
+\begin{enumerate}
+	\solution{Show that $\sim$ is an equivalence relation on $A$.}{From the definition of $\sim$ and the reflexivity of $\rho$, we get that $\sim$ is reflexive. Assume $a\sim b$. Then by definition $a\rho b$ and $b\rho a$ and so $b\sim a$. Therefore $\sim$ is symmetric. Assume $a\sim b$ and $b\sim c$. Then $a\rho b$ and $b\rho c$ and by the transitivity of $\rho$, we have $a\rho c$. By symmetry of $\rho$ we also have $c\rho a$. Therefore $a\sim c$ and so $\sim$ is transitive. Hence $\sim$ is an equivalence relation.}
+	\solution{For $[a],[b]\in A/\sim$, define $[a]\rho'[b]$ iff $a\rho b$. Show that this definition is independent of $a$ and $b$ in the sense that if $a' \in [a], b' \in [b]$, and $a\rho b$, then $a' \rho b'$.}
+	{Take any $a'\in[a]$ and $b'\in[b]$ and assume $a\rho b$. Then $[a]\rho'[b]$. Then since $[a] = [a']$ and $[b] = [b']$ we have $[a']\rho'[b]$ and therefore $a'\rho b'$.}
+	\solution{Show that $\rho'$ is reflexive and transitive. Further, show that if $[a]\rho'[b]$ and $[b]\rho'[a]$, then $[a]=[b]$.}
+	{Since $\rho$ is transitive, we have $a\rho a$ for all $a\in A$. Therefore $[a]\rho'[a]$ for all $[a]\in A/\sim$ by definition and so $\rho'$ is reflexive. Now assume $[a]\rho'[b]$ and $[b]\rho'[c]$. Then $a\rho b$ and $b\rho c$. By the transitivity of $\rho$ we have $a\rho c$ and thus $[a]\rho'[c]$. Therefore $\rho'$ is transitive. Now assume $[a]\rho'[b]$ and $[b]\rho'[a]$. Then $a\rho b$ and $b\rho a$ and so $a\sim b$. Then we must have that $a$ and $b$ are in the same equivalence class mod $\sim$. Since $a\in[a]$ and $b\in[b]$ we must have $[a]=[b]$.}
+\end{enumerate}
+
+\solution{In the set $\mathbb{Z}^+\times\mathbb{Z}^+$ define $\tuple{a,b}\sim\tuple{c,d}$ iff $a+d=b+c$. Show that $\sim$ is an equivalence relation on this set. Indicate the graph of $\mathbb{Z}^+\times\mathbb{Z}^+$, and describe the $\sim$-equivalence classes.}
+{For any $x,y\in\mathbb{Z}^+$ we have $x+y=y+x$ and so $\tuple{x,y}\sim\tuple{x,y}$. Therefore $\sim$ is reflexive. By commutativity, $a+d=b+c \iff d+a=c+b \iff c+b=d+a$. Thus whenever $\tuple{a,b}\sim\tuple{c,d}$, we also have $\tuple{c,d}\sim\tuple{a,b}$ and therefore $\sim$ is symmetric. Now assume $\tuple{a,b}\sim\tuple{c,d}$ and $\tuple{c,d}\sim\tuple{e,f}$. Then we have $a+d=b+c$ and $c+f=d+e$. Then $(a+d-b)+f=d+e \then a+f=b+e \iff \tuple{a,b}\sim\tuple{e,f}$ and so $\sim$ is transitive. Therefore $\sim$ is an equivalence relation on $\mathbb{Z}^+\times\mathbb{Z}^+$.}
 
 \end{enumerate}
 
+\hrulefill
+
+\renewcommand{\labelenumi}{1.8.\arabic{enumi}}
+\begin{enumerate}
+
+\solution{Give an example of a function on $\mathbb{R}$ into $\mathbb{Z}$.}
+{Trivial example: $f:\mathbb{R}\rightarrow\mathbb{Z}$ by $f(x) = 0$ for all $x\in\mathbb{R}$. Non-trivial example: floor function $\floor{\cdot}:\mathbb{R}\rightarrow\mathbb{Z}$ where $\floor{x}$ is the greatest integer less than or equal to $x$. $\floor{x}=n\in\mathbb{Z} \iff n\leq x \land \forall m\in\mathbb{Z}: m\leq x \then m\leq n$. }
+
+\solution{Show that if $A\subseteq X$, then $i_X|A = i_A$}
+{Let $A\subseteq X$. Then $i_X|A = i_X(a)$ for $a\in A$. Then clearly $i_X|A$ is the identity mapping on $A$, or $i_X|A = i_A$.}
+
+\solution{If $X$ and $Y$ are sets of $n$ and $m$ elements, respectively, $Y^X$ has how many elements? How many members of $\mathcal{P}(X\times Y)$ are functions?}
+{If $X$ and $Y$ are sets of $n$ and $m$ elements, then we have $m$ distinct ways to map each of the $n$ distinct elements of $X$. This amounts to $m^n$ possible maps as the notation $Y^X$ suggests. The members of $\mathcal{P}(X\times Y)$ that are functions are those relations which map all members of $X$ to a member of $Y$ and for which no member of $X$ is mapped to more than one member of $Y$. This is precisely $Y^X$. Thus only $m^n$ out of $2^{m^n}$ (only $|Y^X|=\lg|\mathcal{P}(X\times Y)|$) relations in $\mathcal{P}(X\times Y)$ are functions.}
+
+\item Using only mappings of the form $f:\mathbb{Z}^+\rightarrow\mathbb{Z}^+$, give an example of a function which
+\begin{enumerate}
+	\solution{is one-to-one but not onto}{$f(x) = 2x$.}
+	\solution{is onto but not one-to-one}{$f(x) = \floor{\frac{x+2}{2}}$.}
+\end{enumerate}
+
+\solution{Let $A=\set{1,2,\dots,n}$. Prove that if a map $f:A\rightarrow A$ is onto, then it is one-to-one, and if a map $g:A\rightarrow A$ is one-to-one, then it is onto.}{Let $f$ be a map on $A$ onto itself and assume $f(a_1)=f(a_2)$ for some $a_1,a_2\in A$. If $a_1\neq a_2$ then we have two distinct elements in $A$ corresponding to only one element under $f$. This leaves $n-2$ elements to be mapped onto $n-1$ elements. Even if $f|A-(a_1\cup a_2)$ is an onto map, we have one element of $A$ which doesn't get mapped. Then $f$ is not onto, a contradiction. We must have $f(a_1)=f(a_2)\then a_1=a_2$ which means that $f$ is one-to-one.\\Now let $g$ be a one-to-one map on $A$ into itself. Then for any element $b\in A$ we can find a corresponding element $a\in A$ such that $f(a)=b$ because if such an $a$ did not exist, we would have that the $n$ elements of $A$ be mapped into an $A$ subset of size $n-1$. By the pigeonhole principle, we have that two distinct elements must be mapped to the same element, contradicting that $f$ is one-to-one. Therefore $f$ is onto.}
+
+\solution{Let $f:\mathbb{R}^+\rightarrow\mathbb{R}$ where $f(x) = \int_{1}^{x} \frac{dt}{t}$. Show as best you can that $f$ is a one-to-one and onto function.}
+{Let $f$ be defined as above as assume $f(x_1)=f(x_2)$ for some $x_1,x_2\in\mathbb{R}^+$ Then the sum of the area under the curve from 1 to $x_1$ equals the area from 1 to $x_2$. But $1/x$ is positively valued for all $x\in\mathbb{R}^+$. Therefore if $x_1<x_2$ we must have that $f(x_1)<f(x_2)$ and similarly for $x_1>x_2$. Thus we must have $x_1=x_2$ and therefore $f$ is one-to-one. Now take any $y\in\mathbb{R}$. Then we can find an $x\in\mathbb{R}^+$, namely $e^y$, such that $f(x) = y$ since we know from calculus that $f(e^y) = \int_{1}^{e^y} \frac{dt}{t} = \ln(e^y) - \ln1 = y\ln e - 0 = y$. Therefore $f$ is onto.}
+
+\solution{Prove that the function $f$ defined in Example 8.7 is a one-to-one correspondence between $\mathcal{P}(X)$ and $2^X$.}
+{Let $f$ be defined as in Example 8.7 and suppose $f(A)=f(B)$ for some $A,B\in\mathcal{P}(X)$. Then we have $\chi_A = \chi_B$. Then by definition, $\forall x\in X: (x\in A \iff x\in B)\land (x\notin A \iff x\notin B)$ and so $A=B$. Then $f$ is one-to-one. Now for any $\chi\in 2^X$ we have a coded description of some subset $A\subseteq X$. Then we can easily identify $\chi$ with some member of $\mathcal{P}(X)$ and so $f$ is onto. Therefore $f$ is a one-to-one correspondence between $\mathcal{P}(X)$ and $2^X$.}
+
+\solution{Referring to Example 8.8, prove that if $f$ is a function and $A$ and $B$ are sets, then $f[A\cup B] = f[A] \cup f[B]$.}
+{Let $f$ be a function and $A,B$ be sets. (I) Take $y\in f[A\cup B]$. Then there is some $x\in A\cup B$ such that $f(x)=y$. Then $x\in A \then y\in f[A]$ and $x\in B \then y\in f[B]$. Thus $y\in f[A]\cup f[B]$ and so $f[A\cup B] \subseteq f[A] \cup f[B]$. (II) Take $y\in f[A]\cup f[B]$. If $y\in f[A]$ then there exists some $x\in A$ such that $f(x)=y$ and if $y\in f[B]$ then there exists some $x\in B$ such that $f(x)=y$. In both cases $x\in A\cup B$ and so $y\in f[A\cup B]$. Therefore $f[A]\cup f[B] \subseteq f[A\cup B]$. (I) and (II) imply $f[A\cup B] = f[A] \cup f[B]$.}
+
+\solution{Referring to the previous exercise, prove further that $f[A\cap B] \subseteq f[A]\cap f[B]$, and show that proper inclusion can occur.}
+{Let $f$ be a function and $A,B$ be sets. (I) Take $y\in f[A\cap B]$. Then there exists an $x\in A\cap B$ such that $f(x)=y$. Then $x\in A$ and $x\in B$ and so $y\in f[A]$ and $y\in f[B]$ and thus $y\in f[A]\cap f[B]$. Therefore $f[A\cap B]\subseteq f[A]\cap f[B]$. (II) Take $y\in f[A]\cap f[B]$. Since $y\in f[A]$ there exists an $x_1\in A$ such that $f(x_1)=y$ and since $y\in f[B]$ there exists an $x_2\in B$ such that $f(x_2)=y$. In the case that $x_1=x_2$ then we have $x_1\in A\cap B$ and so $y\in f[A\cap B]$. Therefore $f[A]\cap f[B]\subseteq f[A\cap B]$. In this case (I) and (II) imply $f[A\cap B] = f[A]\cap f[B]$.}
+
+\solution{Prove that a function $f$ is one-to-one iff for all sets $A$ and $B$, $f[A\cap B] = f[A] \cap f[B]$.}
+{($\Rightarrow$) Let $f$ be a one-to-one function. Let $A$ and $B$ be sets. We must show $f[A]\cap f[B]\subseteq f[A\cap B]$. Take $y\in f[A]\cap f[B]$. Since $y\in f[A]$ there exists an $x_1\in A$ such that $f(x_1)=y$ and since $y\in f[B]$ there exists an $x_2\in B$ such that $f(x_2)=y$. But since $f$ is one-to-one we must have that $x_1=x_2$. By the previous exercise, we get that $f[A]\cap f[B]\subseteq f[A\cap B]$.\\($\Leftarrow$) Let $f$ be a function such that $f[A]\cap f[B]\subseteq f[A\cap B]$ for all sets $A$ and $B$. Assume $f(a)=f(b)$ for some $a\in A$ and $b\in B$. Then from the previous exercise we have that $a=b$ and so $f$ is one-to-one.}
+
+\solution{Prove that a function $f:X\rightarrow Y$ is onto $Y$ iff $f[X-A]\supseteq Y-f[A]$ for all sets $A$.}
+{($\Rightarrow$) Let $f$ be a function on $X$ onto $Y$. Take $y\in Y-f[A]$. Then $y\in Y$ and $y\notin f[A]$. Then there is an $x\notin A$ such that $f(x)=y$. So $x\in X-A$ and therefore $f[X-A]\supseteq Y-f[A]$.\\($\Leftarrow$) Let $f$ be a function on $X$ into $Y$ such that $f[X-A]\supseteq Y-f[A]$ for all sets $A$. Then taking $A=\emptyset$ we have $f[X]\supseteq Y$. Then for any $y\in Y$ we can find an $x\in X$ such that $f(x)=y$ and so $f$ is onto.}
+
+\solution{Prove that a function $f:X\rightarrow Y$ is one-to-one and onto iff $f[X-A]=Y-f[A]$ for all sets $A$.}
+{($\Rightarrow$) Let $f:X\rightarrow Y$ be a one-to-one and onto function. Take $y\in f[X-A]$ for some set $A$. Then there exists an $x\in X-A$ such that $f(x)=y$ and since $y$ is one-to-one this is the only such $x\in X$. Then $x\notin A \then y\notin f[A] \then y\in Y-f[A]$. Therefore $f[X-A]\subseteq Y-f[A]$. Because $f$ is onto we have from the previous exercise that $f[X-A]\supseteq Y-f[A]$. Together, we have $f[X-A]=Y-f[A]$ for all sets $A$.\\($\Leftarrow$) Let $f:X\rightarrow Y$ be a function such that $f[X-A]=Y-f[A]$ for all sets $A$. Since $f[X-A]\supseteq Y-f[A]$ for all sets $A$, we have from the previous exercise that $f$ is onto. It remains to show that $f$ is one-to-one. Assume $f(x_1)=f(x_2)$ for $x_1,x_2\in X$. Then we have $f[X-\set{x_1}]=Y-f(x_1)$ and $f[X-\set{x_2}]=Y-f(x_2)$ and so $f[X-\set{x_1}]=f[X-\set{x_2}]$. But $x_2\in X-\set{x_1}$ and so $f(x_2)\in f[X-\set{x_1}$ but $x_2\notin X-\set{x_2}$ and so $f(x_2)\notin f[X-\set{x_2}]$, a contradiction. Then we must have $x_1=x_2$ and so $f$ is one-to-one.}
+
+\end{enumerate}
+
+\hrulefill
+
+\renewcommand{\labelenumi}{1.8.\arabic{enumi}}
+\begin{enumerate}
+
+\item next question
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\end{enumerate}
 
 
 
