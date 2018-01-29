@@ -266,6 +266,46 @@ If $f$ is a function and $\tuple{x,y}\in f$, so that $xfy$, then $x$ is an \defn
 
 \defn{$n$-ary operation in $X$}: a function $f$ such that $D_f = X^n$ and $R_f\subseteq X$ where $X^n$ is the set of all $n$-tuples $\tuple{x_1, x_2, \dots, x_n}$ for $x_i\in X$. This is a function of $n$ variables.
 
+\section{Composition and Inversion for Functions}
+
+\defn{composite of $f$ and $g$}: $g\circ f = \set{\tuple{x,z}\mid\exists y: xfy \land ygz}$.\\
+
+\defn{functional composition}: the operation of computing $f\circ g$ from $f$ and $g$. As a special case, if $f:X\rightarrow Y$ and $g:Y\rightarrow Z$, then $g\circ f:X\rightarrow Z$ and $(g\circ f)(x) = g(f(x))$.\\
+
+\thm{associative law for composition}: $f\circ(g\circ h) = (f\circ g)\circ h$.\\
+\thm{Proof}: Assume $\tuple{x,u}\in f\circ(g\circ h)$. Then there is a $z$ such that $\tuple{x,z}\in g\circ h$ and $\tuple{z,u}\in f$. Since $\tuple{x,z}\in g\circ h$, there is a $y$ such that $\tuple{x,y}\in h$ and $\tuple{y,z}\in g$. Now $\tuple{y,z}\in g$ and $\tuple{z,u}\in f$ imply that $\tuple{y,u}\in f\circ g$. Further, $\tuple{x,y}\in h$ and $\tuple{y,u}\in f\circ g$ imply that $\tuple{x,u}\in (f\circ g)\circ h$. Then $f\circ(g\circ h) \subseteq (f\circ g)\circ h$. Reversing the foregoing steps yields the reverse inclusion and hence equality. $\blacksquare$\\
+
+\defn{canonical/natural mapping on $X$ onto $X/\rho$}: $j:X\rightarrow X/\rho$ with $j(x)=[x]$ where $\rho$ is an equivalence relation with domain $X$. Then $j$ is onto the quotient set $X/\rho$.\\
+
+If $f$ is a mapping on $X$ into $Y$, then the relation $x_1\rho x_2$ iff $f(x_1) = f(x_2)$ is an equivalence relation on $X$. Let $j$ be the canonical map on $X$ onto $X/\rho$. Define $g:X/\rho\rightarrow f[X]$ by $g([x]) = f(x)$. Define $i:f[X]\rightarrow Y$ by $i(y) = y$, the injection of $f[X]$ into $Y$. We have that $j$ is onto, $i$ is one-to-one, and $g$ is one-to-one and onto. Then we may write $f = i \circ g \circ j$.\\
+
+Let $f:A\goesto B$. Define $\Inj{f}\equiv f$ is one-to-one. Define $\Surj{f}\equiv f$ is onto. Define $\Bij{f}\equiv \Inj{f} \land \Surj{f}.$\\ 
+
+\underline{A characterization of one-to-oneness}:\\
+Let $f:X\rightarrow Y$. Then $\Inj{f} \iff \forall g,h:Z\goesto X: f\circ g = f\circ h \then g=h$.\\
+
+\underline{A characterization of ontoness}:\\
+Let $f:X\rightarrow Y$. Then $\Surj{f} \iff \forall g,h:Y\goesto Z: g\circ f = h \circ f \then g=h.$\\
+
+\defn{inverse function} $f^{-1}$ of $f$: the function resulting from $f$ by interchanging the coordinates of members of $f$, given that $f$ is one-to-one.\\
+$\forall f:\exists f^{-1} \then D_{f^{-1}}=R_f \land R_{f^{-1}}=D_f \land \left(x=f^{-1}(y) \iff y=f(x)\right)$.\\ 
+$\Inj{f^{-1}} \land (f^{-1})^{-1} = f$.\\
+$\left[f:X\goesto Y \land \Bij{f}\right]\then \left[f^{-1}:Y\goesto X \land \Bij{f^{-1}}\right]$.\\
+$f^{-1}\circ f = i_X \land f\circ f^{-1} = i_X$.\\
+
+\defn{functional inversion}: the operation of computing $f^{-1}$ from $f$.\\
+
+$\Inj{f}\land\Inj{g} \then \Inj{g\circ f} \land [(g\circ f)^{-1} = f^{-1} \circ g^{-1}]$.\\
+
+\defn{inverse} or \defn{counter image} of $A$ under $f$: $f^{-1}[A]$.
+
+
+
+
+
+
+
+
 
 
 \end{document}

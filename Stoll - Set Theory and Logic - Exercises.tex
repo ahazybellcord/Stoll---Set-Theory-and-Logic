@@ -543,10 +543,63 @@ $\mathcal{A}$ is a partition of $S_n$ as long as all of $A_i$ for $1\leq i \leq 
 
 \hrulefill
 
-\renewcommand{\labelenumi}{1.8.\arabic{enumi}}
+\renewcommand{\labelenumi}{1.9.\arabic{enumi}}
 \begin{enumerate}
 
-\item next question
+\solution{Let $f:\REAL\goesto\REAL$ where $f(x)=\left(1+(1-x)^{1/3}\right)^{1/5}$. Express $f$ as the composite of four functions, none of which is the identity function.}{Define $f_1(x) := 1 - x$, $f_2(x) := x^{1/3}$, $f_3(x) := 1 + x$, and $f_4(x) := x^{1/5}$. Then $$f=f_4\circ f_3\circ f_2\circ f_1.$$}
+
+\solution{If $f:X\goesto Y$ and $A\subseteq X$, show that $f\mid A=f\circ i_A$.}{Let $y\in f\circ i_A$. Then $y=f(i_A(x))$ for some $x\in X$. Since the domain of $i_A$ is $A$ we must have $x\in A$. Then $y=f(i_A(x))=f(x)$ for some $x\in A$ and so $y\in f\mid A$. Now let $y\in f\mid A$. Then $y=f(x)$ for some $x\in A$. Since $x=i_A(x)$ for all $x\in A$, $y=f(i_A(x))=(f\circ i_A)(x)$ and therefore $y\in f\circ i_A$.}
+
+\solution{Complete the proof of the assertions made in Example 9.2.}{If $\rho$ is an equivalence relation and $D_{\rho}=X$, then $$j:X\goesto X/\rho$$ with $j(x)=[x]$ is onto the quotient set $X/\rho$ ($\Surj{j}$); $j$ is called the \textbf{canonical} or \textbf{natural mapping} on $X$ onto $X/\rho$. If $f:X\goesto Y$ then the relation $\rho$ defined by $$x_1\rho x_2 \iff f(x_1)=f(x_2)$$ is an equivalence relation on $X$.\\
+
+\small{\underline{Proof}:\\
+$\begin{array}{ccc}\forall x: f(x)=f(x) \then x\rho x.\\ \forall x,y: [f(x)=f(y) \iff f(y)=f(x)] \then [x\rho y \iff y\rho x].\\ \forall x,y,z: [f(x)=f(y)\land f(y)=f(z)\iff f(x)=f(z)] \then [x\rho y \land y\rho z \iff x\rho z].\end{array}$}\\
+
+Let $j$ be the canonical map on $X$ onto $X/\rho$. We contend that a function $g$ on $X/\rho$ into $f[X]$, the range of $f$, is defined by setting $g([x])=f(x)$. To see that $g$ is a function, first note that $R_g\subseteq R_f\then g(X)\subseteq Y \iff R_g \subseteq Y \iff C_g = Y$, where $C_g$ is the codomain of $g$. To see that $g$ is well-defined, consider $x,y\in X$. Then $x\rho y\iff[x]=[y]\iff f(x)=f(y) \iff g([x])=g([y])$. Finally, let $i$ be the injection of $f[X]$ into $Y$. Then we have defined function $j, g, i$, where
+\begin{align*}j:&X\goesto X/\rho :: j(x) = [x]\\ g:&X/\rho\goesto f[X] :: g([x])=f(x)\\ i:&f[X]\goesto Y :: i(y) = y\end{align*} for a function $f:X\goesto Y$. Then $\Surj{j}$ and $\Inj{i}$. 
+
+\small{\underline{Proof}:\\
+$\forall [x]\in X/\rho: \exists x \in X: j(x) = [x]$ (Take element $x$ which is canonical representative of equivalence class $[x]$.) $\then \Surj{j}$.
+$\forall y,z\in Y: y=z \then i(y) = y = z = i(z) \then \Inj{i}$.}
+
+$\Bij{g}$. \underline{Proof}: $\forall [x],[y]\in X/\rho: [x]\neq[y] \iff \lnot x\rho y \iff f(x)\neq f(y)\iff g([x])\neq g([y])\then \Inj{g}.$ $\forall y\in f[X] \exists x\in X/\rho: f(x)=y \then f([x])=y \then \exists [x]\in X/\rho: g([x])=f(x)=y \then \Surj{g}$. $\Inj{g}\land\Surj{g}\then\Bij{g}$.
+By associativity, $i\circ g \circ j = i\circ(g\circ j)$. By definition, $$g\circ j:X\goesto f[X]:: (g\circ j)(x) = g(j(x))=g([x])=f(x)$$ and $$i\circ(g\circ j):X\goesto Y :: (i\circ (g\circ j))(x)=i((g\circ j)(x))=i(f(x))=f(x).$$ Therefore $f = i\circ g \circ j$.}
+
+
+\solution{Complete the proof of (I) and supply a proof of (II) in Example 9.3.}{(I) Let $f:X\goesto Y$. Then $\Inj{f}$ iff for all functions $g$ and $h$ such that $g:Z\goesto X$ and $h:Z\goesto X$, $f\circ g=f\circ h$ implies that $g=h$. \underline{Proof}: Suppose that $\Inj{f}$ and that $g$ and $h$ are mappings on $Z$ into $X$ for which $f\circ g=f\circ h$. Then $f(g(z)) = f(h(z))$ for all $z\in Z$. With $\Inj{f}$ it follows that $g(z)=h(z)$ for all $z\in Z$. Hence $g=h$. Now suppose for all functions $g$ and $h$ such that $g:Z\goesto X$ and $h:Z\goesto X$, $f\circ g=f\circ h$ implies that $g=h$. Suppose $g(z)=x_1$ and $h(z)=x_2$ for some $z\in Z$ and $x_1,x_2\in X$. Then $[(f\circ g)(z)=(f\circ h)(z) \then g(z)=h(z)] \iff [f(g(z))=f(h(z))\then g(z)=h(z)]\iff [f(x_1)=f(x_2)\then x_1=x_2]\iff \Inj{f}$.
+
+(II) Let $f:X\goesto Y$. Then $\Surj{f}$ iff for all functions $g$ and $h$ such that $g:Y\goesto Z$ and $h:Y\goesto Z$, $g\circ f=h\circ f$ implies $g=h$. \underline{Proof}: Suppose $\Surj{f}$ and suppose $g$ and $h$ are mappings from $Y$ into $Z$ such that $g\circ f=h \circ f$. Then $(g\circ f)(x)=(h\circ f)(x)$ for all $x\in X$. And so $g(f(x))=h(f(x))$ for all $f(x)\in Y$. That is, for all $y\in f[X]$, $g(y)=h(y)$. Since $\Surj{f}$ we have that $f[X]=Y$ and so $g(y)=h(y)$ for all $y\in Y$ and so $g=h$. Now suppose for all functions $g$ and $h$ such that $g:Y\goesto Z$ and $h:Y\goesto Z$, $g\circ f=h\circ f$ implies $g=h$. Suppose there is a $y\in Y$ such that $f(x)\neq y$ for all $x\in X$. In other words, $f[X]\neq Y$ or $\lnot\Surj{f}$. Then suppose $g(y)=z_1$, $h(y)=z_2$, and $g(y')=h(y')$ for all other $y'\in Y$. Then $g\circ f= h\circ f$ since $g$ and $h$ only differ at the evaluation of $y$. But $g\neq h$ so our assumption is violated. Therefore $\Surj{f}$.}
+
+\solution{Prove that $f:A\goesto B$ is a one-to-one correspondence between $A$ and $B$ iff there exists a map $g:B\goesto A$ such that $g\circ f = i_A$ and $f\circ g = i_B$.}{Let $f:A\goesto B$ be a one-to-one correspondence between $A$ and $B$. Then there exists an inverse $f^{-1}:B\goesto A$ such that $f^{-1}\circ f=i_A$ and $f \circ f^{-1}=i_B$. Letting $g=f^{-1}$ we satisfy the right implication. Suppose there exists a map $g:B\goesto A$ such that $g\circ f = i_A$ and $f\circ g = i_B$.  Then $g(f(a))=a$ for all $a\in A$ and so $g=f^{-1}$ and $f(g(b))=b$ for all $b\in B$ and so $f=g^{-1}$. Therefore $f$ and $g$ are both invertible and so are one-to-one correspondences.}
+
+\solution{If $f:A\goesto B$ and $g:B\goesto C$ are both one-to-one and onto, show that $g\circ f:A\goesto C$ is one-to-one and onto and that $(g\circ f)^{-1}=f^{-1}\circ g^{-1}$.}{Suppose $\Bij{f}\land\Bij{g}$. For all $a_1\neq a_2\in A$ we have $f(a_1)\neq f(a_2)$ since $\Inj{f}$. Then since $\Inj{g}$ we have $(g \circ f)(a_1)=g(f(a_1))\neq g(f(a_2))=(g\circ f)(a_2)$ and so $a_1\neq a_2\then (g\circ f)(a_1)\neq(g\circ f)(a_2)$. Therefore $\Inj{g\circ f}$. For any $c\in C$, there is a $b\in B$ with $g(b)=c$ since $\Surj{g}$. For any $b\in B$, there is an $a\in A$ with $f(a)=b$ since $\Surj{f}$. Then $c=g(b)=g(f(a))=(g\circ f)(a)$ for some $a\in A$. Therefore $\Surj{g\circ f}$. Since $\Inj{g\circ f}\land\Surj{g\circ f}$ we have $\Bij{g\circ f}$ and so we can define an inverse $(g\circ f)^{-1}:C\goesto A$ such that $(g\circ f)^{-1}\circ(g\circ f)=i_A$. Then for all $a\in A$, $[(g\circ f)^{-1}\circ(g\circ f)](a)= (g\circ f)^{-1} \circ g(f(a)) = i_A$. But $(f^{-1}\circ g^{-1})\circ(g(f(a)))=f^{-1}(g^{-1}(g(f(a))))=f^{-1}(f(a))=a=i_A$ and so $(g\circ f)^{-1} =f^{-1}\circ g^{-1}$.}
+
+\solution{For a function $f:A\goesto A$, $f^n$ is the standard abbreviation for $f\circ f\circ \dots \circ f$ with $n$ occurrences of $f$. Suppose that $f^n=i_A$. Show that $f$ is one-to-one and onto.}{Let $f:A\goesto A$ and suppose $f^n=i_A$. Then for all $a_1\neq a_2\in A$ and suppose $f(a_1)=f(a_2)=a_3$. Then $f^n(f(a_1))=f^{n+1}(a_1)=a_3$ and $f^n(f(a_2))=f^{n+1}(a_2)=a_3$. But $f^n(a_1)=a_1$ and $f^n(a_2)=a_2$ and so $f(a_1)=a_1$ and $f(a_2)=a_2$. Since it's assumed that $a_1\neq a_2$ this is a contradiction. Then $a_1\neq a_2\in A \then f(a_1)\neq f(a_2)$ and so $\Inj{f}$. For any $a\in A$ we have $f^{n-1}(a)\in A$ and $f(f^{n-1}(a)) = f^n(a)=a$. Then $\Surj{f}$.}
+
+\solution{Justify the following restatement of Theorem 7.1. Let $X$ be a set. Then there exists a one-to-one correspondence between the equivalence relations on $X$ and the partitions of $X$.}{Define a function $f$ from the set of equivalence relations on $X$ to the set of partitions of $X$ such that the image of a given equivalence relation under $f$ is the set of its equivalence classes. Theorem 7.1 states that this image is a partition of $X$. Showing that an equivalence relation determines a partition of $X$ and vice versa is equivalent to showing that no two distinct equivalence classes map to the same partition ($\Inj{f}$) and that every partition has a corresponding equivalence relation ($\Surj{f}$). Therefore the statement of Theorem 7.1 is equivalent to the saying $\Bij{f}$.}
+
+\solution{Prove that if the inverse of the function $f$ in $\REAL$ exists, then the graph of $f^{-1}$ may be obtained from that of $f$ by reflection in the line $y=x$.}{If the inverse of $f$ in $\REAL$ exists, then for all $x\in\REAL$ we have $f(x)=y$ for some $y\in\REAL$ and $f^{-1}(y)=x$. Therefore the roles of independent and dependent variable are swapped out for $f^{-1}$. Having a graph with $x$ plotted on one axis and $y$ an a second axis perpendicular to the first, we must flip the graph $180^{\circ}$ around the line $y=x$ to achieve this variable swap graphically.}
+
+\item Show that each of the following functions has an inverse. Determine the domain of each inverse and its value at each member of its domain. Further, sketch the graph of each inverse.
+\begin{enumerate}
+\solution{$f:\REAL\goesto\REAL$ where $f(x)=2x-1$.}{$\forall x,y\in\REAL$, $x\neq y\then f(x)=2x-1\neq 2y-1=f(y)\then \Inj{f}$ and $\forall y\in\REAL$, $f(\frac{1}{2}(y+1))=2(\frac{1}{2}(y+1))-1=y+1-1=y\then\Surj{f}$. Then $D_{f^{-1}}=\REAL$ and $f^{-1}(x)=\frac{1}{2}(x+1)$.}
+\solution{$f:\REAL\goesto\REAL$ where $f(x)=x^3$.}{$\forall x,y\in\REAL$, $x\neq y\then f(x)=x^3\neq y^3=f(y)\then\Inj{f}$ and $\forall y\in\REAL$, $f(\sqrt[3]{y})=(\sqrt[3]{y})^3=y\then\Surj{y}$. Then $D_{f^{-1}}=\REAL$ and $f^{-1}(x)=\sqrt[3]{x}$.}
+\solution{$f=\set{\tuple{x,(1-x^2)^{1/2}} \mid 0\leq x\leq 1}$}{$\forall x,y\in[0,1]$, if $x\neq y$ then $f(x)=(1-x^2)^{1/2}\neq (1-y^2)^{1/2}=f(y)$ since $g(x)=x^2$ and $h(x)=x^{1/2}$ are both monotonically increasing in $[0,1]$. So $\Inj{f}$. For all $y\in[0,1]$ we have $f((1-y^2)^{1/2})=(1-((1-y^2)^{1/2})^2)^{1/2}=(1-(1-y^2))^{1/2}=(y^2)^{1/2}=y$. Then $D_{f^{-1}}=[0,1]$ and $f^{-1}(x)=(1-x^2)^{1/2}=f(x)$.}
+\solution{$f=\set{\tuple{x,\frac{x}{x-1}\mid -2\leq x < 1}}$}{$\forall x,y\in[-2,1)$, if $x\neq y$ then $f(x)=\frac{x}{x-1}\neq\frac{y}{y-1}=f(y)\then\Inj{f}$. $\forall y\in[-2,1)$ we have $f(\frac{y}{y-1})=\frac{y/(y-1)}{y/(y-1) - 1}=\frac{y/y-1}{1/y-1}=y\then\Surj{f}$. Then $D_{f^{-1}}=[-2,1)$ and $f^{-1}(x)=\frac{x}{x-1}=f(x)$.}
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{enumerate}
